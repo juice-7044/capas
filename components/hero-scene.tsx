@@ -5,7 +5,7 @@ import { useMemo, useRef } from 'react'
 import * as THREE from 'three'
 
 const GOLD = '#c9a227'
-const FOREST = '#060e08'
+const FOREST = '#081408'
 
 /* A simple stylized folding chair built from primitives. */
 function chairMatrix(i: number, total: number) {
@@ -156,7 +156,7 @@ function Floor() {
   return (
     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.2, 0]} receiveShadow>
       <planeGeometry args={[60, 60]} />
-      <meshStandardMaterial color="#08130d" roughness={1} metalness={0} />
+      <meshStandardMaterial color="#0a1a0c" roughness={1} metalness={0} />
     </mesh>
   )
 }
