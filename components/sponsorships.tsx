@@ -4,67 +4,66 @@ import { Check } from 'lucide-react'
 
 const TIERS = [
   {
-    name: 'Spotlight',
+    name: 'Chair Holder',
     price: '$5,000',
-    line: 'One pop-up performance in your lobby',
-    perks: ['Branded photo & 60-sec video package', 'LinkedIn co-post', '1,000+ community minutes funded'],
+    line: 'Fund a section of seats',
+    perks: ['Your name on a row of the founding wall', 'Quarterly progress notes', 'First invite to opening night'],
     featured: false,
   },
   {
-    name: 'Curtain Raiser',
+    name: 'Door Opener',
     price: '$25,000',
-    line: 'A named semester of classes',
-    perks: ['Logo on all class materials', 'Quarterly impact report with your team', '1,000+ student-hours funded', 'Two board observer seats'],
+    line: 'Unlock a class for a full season',
+    perks: ['A named class on the schedule', 'Team visit to a pop-up rehearsal', 'Logo on season materials', 'Impact recap with your staff'],
     featured: true,
   },
   {
-    name: "Producer's Circle",
+    name: 'Stage Builder',
     price: '$100,000',
-    line: 'A named studio wing',
-    perks: ['Dedication plaque & annual gala table', 'Free classes for your employees', 'White-label impact dashboard', '5,000+ annual student-hours'],
+    line: 'Build a room in the studio',
+    perks: ['A named rehearsal or recording room', 'Dedication plaque on opening day', 'Annual studio visit for your team', 'Named seat at the founding gala'],
+    featured: false,
+  },
+  {
+    name: 'Legacy Producer',
+    price: '$250,000+',
+    line: 'Anchor the permanent home',
+    perks: ['Founding cornerstone recognition', 'Naming rights on a lasting space', 'Seat at the table as we grow', 'A partnership measured in decades'],
     featured: false,
   },
 ]
 
 export function Sponsorships() {
   return (
-    <section id="partnerships" className="relative bg-forest-black py-28 sm:py-36">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="partnerships" className="relative overflow-hidden bg-forest-black py-28 sm:py-36">
+      {/* Chalk-sketch texture */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(42deg,#f5f0e8 0 1px,transparent 1px 7px),repeating-linear-gradient(-38deg,#f5f0e8 0 1px,transparent 1px 9px)',
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-6">
         <Reveal className="max-w-2xl">
           <p className="font-label text-[0.7rem] text-gold md:text-xs">Corporate partnerships</p>
           <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
-            Adopt a stage, not a line item.
+            Build with us, not for us.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-ivory-dim">
-            This isn&apos;t CSR. Picture your logo projected onto PS 83 or the Andrew Freedman
-            Home—then the building fills with light, music, and neighbors. The only sponsorship that
-            comes home for dinner.
+            We&apos;re a pre-launch nonprofit with a thirty-year track record and no building yet.
+            Partner early and your name is drawn into the blueprint&mdash;not stapled on after the
+            fact. Every tier is a hand on the same pencil.
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          <Reveal className="rounded-2xl border border-gold/20 bg-plum-deep/40 p-6">
-            <p className="text-pretty text-[15px] leading-relaxed text-ivory">
-              CAPAS students live in{' '}
-              <span className="font-semibold text-gold">10467, 10469, 10466, 10475</span>—zip codes
-              with zero free performing arts access.
-            </p>
-          </Reveal>
-          <Reveal delay={100} className="rounded-2xl border border-gold/20 bg-plum-deep/40 p-6">
-            <p className="text-pretty text-[15px] leading-relaxed text-ivory">
-              Your employees&apos; children attend PS 83, Bronx Mathematics Prep, St. Nicholas of
-              Tolentine. <span className="font-semibold text-gold">So do ours.</span>
-            </p>
-          </Reveal>
-        </div>
-
-        <div className="mt-16 grid items-start gap-6 lg:grid-cols-3">
+        <div className="mt-16 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {TIERS.map((tier, i) => (
             <Reveal
               key={tier.name}
-              delay={i * 120}
+              delay={i * 100}
               className={cn(
-                'flex flex-col rounded-2xl border p-8',
+                'flex flex-col rounded-2xl border p-7',
                 tier.featured
                   ? 'border-primary bg-primary text-primary-foreground shadow-2xl shadow-primary/20 lg:-translate-y-3'
                   : 'border-border bg-card',
@@ -77,7 +76,7 @@ export function Sponsorships() {
               )}
               <h3
                 className={cn(
-                  'font-display text-2xl font-semibold',
+                  'font-display text-xl font-semibold',
                   tier.featured ? 'text-primary-foreground' : 'text-foreground',
                 )}
               >
@@ -85,7 +84,7 @@ export function Sponsorships() {
               </h3>
               <p
                 className={cn(
-                  'mt-4 font-display text-4xl font-semibold',
+                  'mt-3 font-display text-3xl font-semibold',
                   tier.featured ? 'text-primary-foreground' : 'text-primary',
                 )}
               >
@@ -121,7 +120,7 @@ export function Sponsorships() {
               </ul>
 
               <a
-                href="#community"
+                href="#"
                 className={cn(
                   'mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.03]',
                   tier.featured
@@ -129,19 +128,19 @@ export function Sponsorships() {
                     : 'bg-primary text-primary-foreground',
                 )}
               >
-                Schedule a 12-min salon
+                Book a call
               </a>
             </Reveal>
           ))}
         </div>
 
         <Reveal delay={120} className="mx-auto mt-14 max-w-3xl text-center">
-          <blockquote className="font-display text-xl leading-relaxed text-balance text-foreground sm:text-2xl">
-            &ldquo;We thought we were writing a check. CAPAS made us feel like we
-            built a bridge.&rdquo;
+          <blockquote className="font-display text-xl leading-relaxed text-balance text-ivory sm:text-2xl">
+            &ldquo;We didn&apos;t want to sponsor a finished thing. We wanted to help build it from
+            an empty room.&rdquo;
           </blockquote>
-          <p className="mt-4 text-sm uppercase tracking-wider text-muted-foreground">
-            — Partner, regional technology firm
+          <p className="font-label mt-4 text-[0.65rem] text-ivory-dim">
+            &mdash; An early partner
           </p>
         </Reveal>
       </div>

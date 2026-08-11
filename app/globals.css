@@ -47,44 +47,44 @@
 
 :root {
   color-scheme: dark;
-  /* CAPAS — The Bronx Stage */
-  --forest-black: #081408;
-  --forest-deep: #0c1d10;
-  --plum-deep: #2b122b;
-  --plum-darker: #230f23;
+  /* Lola Louis' Creative & Performing Arts — locked palette */
+  --forest-black: #060e08;
+  --forest-deep: #0a1a0f;
+  --plum-deep: #312442;
+  --plum-darker: #271d34;
   --gold: #c9a227;
   --ivory: #f5f0e8;
   --ivory-dim: #c4bdb0;
 
-  --background: #081408; /* forest-black */
+  --background: #060e08; /* forest-black */
   --foreground: #f5f0e8; /* ivory */
-  --card: #0c1d10; /* forest-deep */
+  --card: #0a1a0f; /* forest-deep */
   --card-foreground: #f5f0e8;
-  --popover: #0c1d10;
+  --popover: #0a1a0f;
   --popover-foreground: #f5f0e8;
   --primary: #c9a227; /* metallic gold */
-  --primary-foreground: #081408;
-  --secondary: #2b122b; /* plum-deep */
+  --primary-foreground: #060e08;
+  --secondary: #312442; /* plum-deep */
   --secondary-foreground: #f5f0e8;
-  --muted: #230f23; /* plum-darker */
+  --muted: #271d34; /* plum-darker */
   --muted-foreground: #c4bdb0; /* ivory-dim */
   --accent: #c9a227;
-  --accent-foreground: #081408;
+  --accent-foreground: #060e08;
   --destructive: #b4432a;
   --border: rgba(201, 162, 39, 0.16);
   --input: rgba(201, 162, 39, 0.2);
   --ring: #c9a227;
   --chart-1: #c9a227;
-  --chart-2: #2b122b;
+  --chart-2: #312442;
   --chart-3: #8d5524;
   --chart-4: #c4bdb0;
-  --chart-5: #0c1d10;
+  --chart-5: #0a1a0f;
   --radius: 0.5rem;
-  --sidebar: #0c1d10;
+  --sidebar: #0a1a0f;
   --sidebar-foreground: #f5f0e8;
   --sidebar-primary: #c9a227;
-  --sidebar-primary-foreground: #081408;
-  --sidebar-accent: #230f23;
+  --sidebar-primary-foreground: #060e08;
+  --sidebar-accent: #271d34;
   --sidebar-accent-foreground: #f5f0e8;
   --sidebar-border: rgba(201, 162, 39, 0.16);
   --sidebar-ring: #c9a227;
@@ -171,9 +171,32 @@
   animation: rise-in 0.8s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
+/* Locked-door rattle on hover */
+@keyframes door-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-4px) rotate(-0.4deg);
+  }
+  40% {
+    transform: translateX(4px) rotate(0.4deg);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-chair-pulse,
   .animate-rise {
     animation: none;
+  }
+  .group:hover {
+    animation: none !important;
   }
 }

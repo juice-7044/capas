@@ -23,9 +23,9 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'CAPAS — The Bronx Stage | Free Performing Arts for Every Age',
+  title: "Lola Louis' Creative & Performing Arts | The chairs are empty. The stage is not.",
   description:
-    'The Bronx built us. Now we build the stage back. Free piano, ballet, hip-hop, and acting for every age and background. El escenario es de todos.',
+    'For thirty years we taught the Northeast Bronx to perform. Then we lost our space. Help us reopen: free piano, ballet, hip-hop, and acting for every age. Fund a chair for $1.',
   generator: 'v0.app',
   icons: {
     icon: [

@@ -24,11 +24,11 @@ export function SiteFooter() {
               <span className="font-display text-lg font-semibold text-ivory">CAPAS</span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ivory-dim">
-              Lola Louis&apos; Creative &amp; Performing Arts. 100% free performing arts education for
-              Bronx families who&apos;ve been priced out.
+              Lola Louis&apos; Creative &amp; Performing Arts. Thirty years of free performing arts
+              in the Northeast Bronx&mdash;raising the curtain again.
             </p>
             <p className="mt-6 text-balance font-display text-lg leading-snug text-ivory">
-              El escenario es de todos.
+              The chairs are empty. The stage is not.
             </p>
           </div>
 
@@ -65,12 +65,12 @@ export function SiteFooter() {
         <div className="mt-8 flex flex-col gap-2 border-t border-gold/20 pt-8 text-sm text-ivory-dim sm:flex-row sm:items-center sm:justify-between">
           <p>All donations tax-deductible to the fullest extent of the law.</p>
           <p>
-            Questions?{' '}
+            Questions? Email the founder directly:{' '}
             <a
-              href="mailto:contact@lolalouiscapas.org"
+              href="mailto:lola@lolalouiscapas.org"
               className="text-gold underline-offset-4 hover:underline"
             >
-              contact@lolalouiscapas.org
+              lola@lolalouiscapas.org
             </a>
           </p>
         </div>

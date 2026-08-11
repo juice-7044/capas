@@ -1,10 +1,11 @@
 import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
+import { Mission } from '@/components/mission'
 import { Transformations } from '@/components/transformations'
 import { Impact } from '@/components/impact'
+import { Roadmap } from '@/components/roadmap'
 import { Classes } from '@/components/classes'
 import { Sponsorships } from '@/components/sponsorships'
-import { Roadmap } from '@/components/roadmap'
 import { Community } from '@/components/community'
 import { SiteFooter } from '@/components/site-footer'
 import { SmoothScroll } from '@/components/smooth-scroll'
@@ -16,11 +17,12 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
+        <Mission />
         <Transformations />
         <Impact />
+        <Roadmap />
         <Classes />
         <Sponsorships />
-        <Roadmap />
         <Community />
       </main>
       <SiteFooter />

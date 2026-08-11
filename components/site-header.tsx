@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
 const NAV = [
-  { label: 'The Promise', href: '#transformations' },
-  { label: 'Impact', href: '#impact' },
+  { label: 'Why Free', href: '#mission' },
+  { label: 'Who\u2019s Waiting', href: '#transformations' },
+  { label: 'The Vision', href: '#roadmap' },
   { label: 'Classes', href: '#classes' },
   { label: 'Partners', href: '#partnerships' },
-  { label: 'Community', href: '#community' },
 ]
 
 export function SiteHeader() {
@@ -54,7 +54,7 @@ export function SiteHeader() {
           href="#community"
           className="metallic-gold inline-flex items-center rounded-full px-5 py-2 text-sm font-semibold transition-transform hover:scale-[1.03]"
         >
-          Light a Chair · $1
+          Fund a Chair · $1
         </a>
       </div>
     </header>
