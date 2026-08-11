@@ -43,7 +43,7 @@ export function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm text-ivory-dim transition-colors hover:text-gold"
             >
               {item.label}
             </a>
@@ -52,7 +52,7 @@ export function SiteHeader() {
 
         <a
           href="#community"
-          className="inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
+          className="metallic-gold inline-flex items-center rounded-full px-5 py-2 text-sm font-semibold transition-transform hover:scale-[1.03]"
         >
           Light a Chair · $1
         </a>

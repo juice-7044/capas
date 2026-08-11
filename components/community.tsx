@@ -7,18 +7,18 @@ import { cn } from '@/lib/utils'
 const AMOUNTS = [1, 5, 25, 100]
 
 const DONORS = [
-  { name: 'Aisha', city: 'Bronx, NY', amount: 1 },
-  { name: 'Marcus', city: 'Queens, NY', amount: 25 },
-  { name: 'The Okafor Family', city: 'Newark, NJ', amount: 100 },
-  { name: 'Lena', city: 'Bronx, NY', amount: 5 },
-  { name: 'David', city: 'Yonkers, NY', amount: 1 },
-  { name: 'Priya', city: 'Jersey City, NJ', amount: 50 },
-  { name: 'Sam & Jo', city: 'Bronx, NY', amount: 10 },
-  { name: 'Rosa', city: 'Harlem, NY', amount: 1 },
-  { name: 'The Lin Family', city: 'Flushing, NY', amount: 250 },
-  { name: 'Elijah', city: 'Bronx, NY', amount: 1 },
-  { name: 'Grace', city: 'Brooklyn, NY', amount: 20 },
-  { name: 'Anonymous', city: 'Bronx, NY', amount: 5 },
+  { name: 'La familia Reyes', city: 'Tremont · 10457', amount: 1 },
+  { name: 'Marcus', city: 'Wakefield · 10466', amount: 25 },
+  { name: 'The Okafor Family', city: 'Fordham · 10458', amount: 100 },
+  { name: 'Yaritza', city: 'Pelham Parkway · 10462', amount: 5 },
+  { name: 'Mr. Persaud', city: 'Co-op City · 10475', amount: 1 },
+  { name: 'Priya', city: 'Norwood · 10467', amount: 50 },
+  { name: 'Sam & Jo', city: 'Bedford Park · 10468', amount: 10 },
+  { name: 'Doña Rosa', city: 'Mott Haven · 10454', amount: 1 },
+  { name: 'The Lin Family', city: 'Morris Park · 10461', amount: 250 },
+  { name: 'Elijah', city: 'Soundview · 10473', amount: 1 },
+  { name: 'Besnik', city: 'Belmont · 10458', amount: 20 },
+  { name: 'Anónimo', city: 'Highbridge · 10452', amount: 5 },
 ]
 
 export function Community() {
@@ -29,15 +29,13 @@ export function Community() {
     <section id="community" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-accent">
-            The invisible audience
-          </p>
+          <p className="font-label text-[0.7rem] text-gold md:text-xs">El escenario es de todos</p>
           <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
-            100,000 people. $1 each. One revolution.
+            100,000 neighbors. $1 each. One borough on its feet.
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            Take your seat. Every donation lights an empty chair in real time
-            and funds a minute of instruction for a student who&apos;s waiting.
+          <p className="mt-5 text-lg leading-relaxed text-ivory-dim">
+            Take your seat. Every dollar lights an empty chair in real time and funds a minute of
+            instruction for a Bronx student who&apos;s waiting.
           </p>
         </Reveal>
 
@@ -113,7 +111,7 @@ export function Community() {
 
                 <button
                   type="submit"
-                  className="mt-5 w-full rounded-full bg-primary py-3.5 text-base font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
+                  className="metallic-gold mt-5 w-full rounded-full py-3.5 text-base font-semibold transition-transform hover:scale-[1.02]"
                 >
                   Give ${amount} &amp; light a chair
                 </button>

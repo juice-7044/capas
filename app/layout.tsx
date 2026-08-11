@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, Inter } from 'next/font/google'
+import { Fraunces, Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -15,10 +15,17 @@ const inter = Inter({
   display: 'swap',
 })
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  weight: ['500'],
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: 'CAPAS — The Invisible Stage | Free Performing Arts Education',
+  title: 'CAPAS — The Bronx Stage | Free Performing Arts for Every Age',
   description:
-    'CAPAS provides 100% free performing arts education — piano, ballet, hip-hop, acting — to families earning under $150,000. Zero tuition. Forever.',
+    'The Bronx built us. Now we build the stage back. Free piano, ballet, hip-hop, and acting for every age and background. El escenario es de todos.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -41,7 +48,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#0a0a0f',
+  themeColor: '#060e08',
 }
 
 export default function RootLayout({
@@ -50,7 +57,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} bg-background`}>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${inter.variable} ${spaceGrotesk.variable} bg-background`}
+    >
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

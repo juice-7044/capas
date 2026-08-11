@@ -7,10 +7,12 @@ import { Sponsorships } from '@/components/sponsorships'
 import { Roadmap } from '@/components/roadmap'
 import { Community } from '@/components/community'
 import { SiteFooter } from '@/components/site-footer'
+import { SmoothScroll } from '@/components/smooth-scroll'
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background font-sans">
+      <SmoothScroll />
       <SiteHeader />
       <main>
         <Hero />

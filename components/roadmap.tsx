@@ -26,7 +26,7 @@ export function Roadmap() {
     <section className="relative overflow-hidden bg-secondary py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-primary">
+          <p className="font-label text-[0.7rem] text-gold md:text-xs">
             What we&apos;re building while you read this
           </p>
           <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-balance text-secondary-foreground sm:text-5xl">

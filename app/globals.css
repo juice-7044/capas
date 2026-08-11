@@ -47,41 +47,50 @@
 
 :root {
   color-scheme: dark;
-  /* CAPAS — The Invisible Stage */
-  --background: #0a0a0f; /* Wing Black */
-  --foreground: #f8f5f0; /* House Light White */
-  --card: #10111a; /* raised velvet dark */
-  --card-foreground: #f8f5f0;
-  --popover: #10111a;
-  --popover-foreground: #f8f5f0;
-  --primary: #f5e7c1; /* Curtain Gold */
-  --primary-foreground: #0b1f3b; /* Velvet Navy */
-  --secondary: #0b1f3b; /* Velvet Navy */
-  --secondary-foreground: #f8f5f0;
-  --muted: #16192a;
-  --muted-foreground: #a8a29e; /* Dimmer Grey */
-  --accent: #ff4d6d; /* Stage Door Red */
-  --accent-foreground: #f8f5f0;
-  --destructive: #ff4d6d;
-  --border: rgba(245, 231, 193, 0.12);
-  --input: rgba(245, 231, 193, 0.16);
-  --ring: #f5e7c1;
-  --chart-1: #f5e7c1;
-  --chart-2: #ff4d6d;
-  --chart-3: #0b1f3b;
-  --chart-4: #a8a29e;
-  --chart-5: #6b7db3;
+  /* CAPAS — The Bronx Stage */
+  --forest-black: #060e08;
+  --forest-deep: #0a1a0f;
+  --plum-deep: #312442;
+  --plum-darker: #271d34;
+  --gold: #c9a227;
+  --ivory: #f5f0e8;
+  --ivory-dim: #c4bdb0;
+
+  --background: #060e08; /* forest-black */
+  --foreground: #f5f0e8; /* ivory */
+  --card: #0a1a0f; /* forest-deep */
+  --card-foreground: #f5f0e8;
+  --popover: #0a1a0f;
+  --popover-foreground: #f5f0e8;
+  --primary: #c9a227; /* metallic gold */
+  --primary-foreground: #060e08;
+  --secondary: #312442; /* plum-deep */
+  --secondary-foreground: #f5f0e8;
+  --muted: #271d34; /* plum-darker */
+  --muted-foreground: #c4bdb0; /* ivory-dim */
+  --accent: #c9a227;
+  --accent-foreground: #060e08;
+  --destructive: #b4432a;
+  --border: rgba(201, 162, 39, 0.16);
+  --input: rgba(201, 162, 39, 0.2);
+  --ring: #c9a227;
+  --chart-1: #c9a227;
+  --chart-2: #312442;
+  --chart-3: #8d5524;
+  --chart-4: #c4bdb0;
+  --chart-5: #0a1a0f;
   --radius: 0.5rem;
-  --sidebar: #10111a;
-  --sidebar-foreground: #f8f5f0;
-  --sidebar-primary: #f5e7c1;
-  --sidebar-primary-foreground: #0b1f3b;
-  --sidebar-accent: #16192a;
-  --sidebar-accent-foreground: #f8f5f0;
-  --sidebar-border: rgba(245, 231, 193, 0.12);
-  --sidebar-ring: #f5e7c1;
+  --sidebar: #0a1a0f;
+  --sidebar-foreground: #f5f0e8;
+  --sidebar-primary: #c9a227;
+  --sidebar-primary-foreground: #060e08;
+  --sidebar-accent: #271d34;
+  --sidebar-accent-foreground: #f5f0e8;
+  --sidebar-border: rgba(201, 162, 39, 0.16);
+  --sidebar-ring: #c9a227;
   --font-display: var(--font-fraunces);
   --font-body: var(--font-inter);
+  --font-label: var(--font-space-grotesk);
 }
 
 @layer base {
@@ -97,11 +106,36 @@
 @theme inline {
   --font-sans: var(--font-inter);
   --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-space-grotesk);
+  --color-gold: var(--gold);
+  --color-plum-deep: var(--plum-deep);
+  --color-plum-darker: var(--plum-darker);
+  --color-forest-black: var(--forest-black);
+  --color-forest-deep: var(--forest-deep);
+  --color-ivory: var(--ivory);
+  --color-ivory-dim: var(--ivory-dim);
 }
 
 @layer utilities {
   .font-display {
     font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  }
+  .font-label {
+    font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+  /* Metallic gold sheen for primary CTAs */
+  .metallic-gold {
+    background-image: linear-gradient(135deg, #e6c04a 0%, #c9a227 45%, #9c7d1c 100%);
+    color: #060e08;
+    box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.5), 0 8px 30px -8px rgba(201, 162, 39, 0.5);
+  }
+  .text-gradient-gold {
+    background-image: linear-gradient(135deg, #e6c04a 0%, #c9a227 50%, #a5831e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }
 
@@ -110,11 +144,11 @@
   0%,
   100% {
     opacity: 0.55;
-    filter: drop-shadow(0 0 12px rgba(245, 231, 193, 0.35));
+    filter: drop-shadow(0 0 12px rgba(201, 162, 39, 0.35));
   }
   50% {
     opacity: 1;
-    filter: drop-shadow(0 0 28px rgba(245, 231, 193, 0.7));
+    filter: drop-shadow(0 0 28px rgba(201, 162, 39, 0.7));
   }
 }
 

@@ -28,20 +28,35 @@ const TIERS = [
 
 export function Sponsorships() {
   return (
-    <section id="partnerships" className="relative py-28 sm:py-36">
+    <section id="partnerships" className="relative bg-forest-black py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-accent">
-            Corporate partnerships
-          </p>
+          <p className="font-label text-[0.7rem] text-gold md:text-xs">Corporate partnerships</p>
           <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
             Adopt a stage, not a line item.
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            This isn&apos;t CSR. It&apos;s a standing ovation for your values —
-            the only sponsorship that comes home for dinner.
+          <p className="mt-5 text-lg leading-relaxed text-ivory-dim">
+            This isn&apos;t CSR. Picture your logo projected onto PS 83 or the Andrew Freedman
+            Home—then the building fills with light, music, and neighbors. The only sponsorship that
+            comes home for dinner.
           </p>
         </Reveal>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <Reveal className="rounded-2xl border border-gold/20 bg-plum-deep/40 p-6">
+            <p className="text-pretty text-[15px] leading-relaxed text-ivory">
+              CAPAS students live in{' '}
+              <span className="font-semibold text-gold">10467, 10469, 10466, 10475</span>—zip codes
+              with zero free performing arts access.
+            </p>
+          </Reveal>
+          <Reveal delay={100} className="rounded-2xl border border-gold/20 bg-plum-deep/40 p-6">
+            <p className="text-pretty text-[15px] leading-relaxed text-ivory">
+              Your employees&apos; children attend PS 83, Bronx Mathematics Prep, St. Nicholas of
+              Tolentine. <span className="font-semibold text-gold">So do ours.</span>
+            </p>
+          </Reveal>
+        </div>
 
         <div className="mt-16 grid items-start gap-6 lg:grid-cols-3">
           {TIERS.map((tier, i) => (
