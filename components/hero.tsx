@@ -62,7 +62,7 @@ export function Hero() {
         {/* Overlay copy */}
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
           <p className="font-label mb-6 text-[0.7rem] text-gold/90 md:text-xs">
-            Community Academy of Performing Arts · The Bronx
+            Lola Louis&apos; Creative &amp; Performing Arts · The Bronx
           </p>
 
           <h1 className="max-w-4xl text-balance font-display text-4xl leading-[1.05] text-ivory sm:text-6xl lg:text-7xl">

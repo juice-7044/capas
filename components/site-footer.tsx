@@ -24,8 +24,8 @@ export function SiteFooter() {
               <span className="font-display text-lg font-semibold text-ivory">CAPAS</span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ivory-dim">
-              Community Academy of Performing Arts. 100% free performing arts education for Bronx
-              families who&apos;ve been priced out.
+              Lola Louis&apos; Creative &amp; Performing Arts. 100% free performing arts education for
+              Bronx families who&apos;ve been priced out.
             </p>
             <p className="mt-6 text-balance font-display text-lg leading-snug text-ivory">
               El escenario es de todos.
