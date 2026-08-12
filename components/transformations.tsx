@@ -64,9 +64,6 @@ export function Transformations() {
                 className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-              <span className="font-label absolute left-4 top-4 rounded-full bg-forest-black/70 px-3 py-1 text-[0.6rem] text-gold backdrop-blur">
-                {panel.community}
-              </span>
             </div>
 
             <div className="flex flex-1 flex-col p-7">

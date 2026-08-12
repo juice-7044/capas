@@ -65,12 +65,12 @@ export function SiteFooter() {
         <div className="mt-8 flex flex-col gap-2 border-t border-gold/20 pt-8 text-sm text-ivory-dim sm:flex-row sm:items-center sm:justify-between">
           <p>All donations tax-deductible to the fullest extent of the law.</p>
           <p>
-            Questions? Email the founder directly:{' '}
+            Questions?{' '}
             <a
-              href="mailto:lola@lolalouiscapas.org"
+              href="mailto:info@lolalouiscapas.org"
               className="text-gold underline-offset-4 hover:underline"
             >
-              lola@lolalouiscapas.org
+              info@lolalouiscapas.org
             </a>
           </p>
         </div>
