@@ -31,7 +31,7 @@ export const FOOTER_COLUMNS = [
       { label: 'About', href: '/about' },
       { label: 'Founder', href: '/founder' },
       { label: 'Programs', href: '/programs' },
-      { label: 'Gallery', href: '/gallery' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
   {
