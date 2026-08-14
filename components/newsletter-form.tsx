@@ -16,7 +16,7 @@ export function NewsletterForm() {
 
   if (submitted) {
     return (
-      <p className="text-pretty text-sm leading-relaxed text-ivory">
+      <p className="text-pretty text-sm leading-relaxed text-foreground">
         Thanks, {firstName.trim()}. You&apos;re on the list&mdash;we&apos;ll only write when it
         matters.
       </p>
@@ -35,7 +35,7 @@ export function NewsletterForm() {
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
         placeholder="First name"
-        className="w-full rounded-lg border border-gold/20 bg-forest-black/40 px-3.5 py-2.5 text-sm text-ivory placeholder:text-ivory-dim/70 focus:border-gold/60 focus:outline-none"
+        className="w-full rounded-lg border border-border bg-card px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
       />
       <div className="flex gap-2">
         <label htmlFor="nl-email" className="sr-only">
@@ -48,11 +48,11 @@ export function NewsletterForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email address"
-          className="w-full rounded-lg border border-gold/20 bg-forest-black/40 px-3.5 py-2.5 text-sm text-ivory placeholder:text-ivory-dim/70 focus:border-gold/60 focus:outline-none"
+          className="w-full rounded-lg border border-border bg-card px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
         />
         <button
           type="submit"
-          className="metallic-gold shrink-0 rounded-lg px-5 py-2.5 text-sm font-semibold transition-transform hover:scale-[1.03]"
+          className="btn-green shrink-0 rounded-lg px-5 py-2.5 text-sm font-semibold transition-transform hover:scale-[1.03]"
         >
           Join
         </button>

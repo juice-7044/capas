@@ -40,63 +40,59 @@ export function Roadmap() {
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    const obs = new IntersectionObserver(
-      ([e]) => e.isIntersecting && setInView(true),
-      { threshold: 0.4 },
-    )
+    const obs = new IntersectionObserver(([e]) => e.isIntersecting && setInView(true), {
+      threshold: 0.4,
+    })
     obs.observe(el)
     return () => obs.disconnect()
   }, [])
 
   return (
-    <section id="roadmap" className="relative overflow-hidden bg-secondary py-28 sm:py-36">
+    <section id="roadmap" className="relative overflow-hidden bg-off-white py-28 sm:py-36">
       <div className="mx-auto max-w-5xl px-6">
         <Reveal className="max-w-2xl">
-          <p className="font-label text-[0.7rem] text-gold md:text-xs">The road to reopening</p>
-          <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-balance text-secondary-foreground sm:text-5xl">
+          <p className="font-label text-[0.7rem] text-primary md:text-xs">The road to reopening</p>
+          <h2 className="mt-5 text-balance font-display text-3xl font-semibold tracking-tight text-foreground sm:text-5xl">
             We don&apos;t have a studio yet. That&apos;s exactly why we need you.
           </h2>
         </Reveal>
 
         {/* Live progress bar */}
-        <div ref={ref} className="mt-12 rounded-2xl border border-gold/20 bg-plum-darker/50 p-8">
+        <div ref={ref} className="mt-12 rounded-2xl border border-border bg-card p-8">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <p className="font-display text-2xl font-semibold text-ivory sm:text-3xl">
-              We&apos;re{' '}
-              <span className="text-gradient-gold">{inView ? pct : 0}%</span> to opening the doors
+            <p className="font-display text-2xl font-semibold text-foreground sm:text-3xl">
+              We&apos;re <span className="text-gradient-green">{inView ? pct : 0}%</span> to opening
+              the doors
             </p>
-            <p className="font-label text-[0.65rem] text-ivory-dim">
+            <p className="font-label text-[0.65rem] text-muted-foreground">
               ${RAISED.toLocaleString()} of ${GOAL.toLocaleString()}
             </p>
           </div>
-          <div className="mt-5 h-3 w-full overflow-hidden rounded-full bg-forest-black/60">
+          <div className="mt-5 h-3 w-full overflow-hidden rounded-full bg-muted">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-[#e6c04a] to-[#9c7d1c]"
+              className="h-full rounded-full bg-gradient-to-r from-green-light to-green"
               initial={{ width: reduce ? `${pct}%` : 0 }}
               animate={{ width: inView ? `${pct}%` : reduce ? `${pct}%` : 0 }}
               transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
             />
           </div>
-          <p className="mt-4 text-sm text-ivory-dim">
+          <p className="mt-4 text-sm text-muted-foreground">
             Live total, updated with every gift. When the bar fills, the doors open.
           </p>
         </div>
 
         {/* Vertical timeline */}
-        <ol className="relative mt-16 border-l border-gold/25 pl-8">
+        <ol className="relative mt-16 border-l border-border pl-8">
           {PHASES.map((p, i) => (
-            <Reveal
-              as="li"
-              key={p.phase}
-              delay={i * 140}
-              className="relative pb-12 last:pb-0"
-            >
+            <Reveal as="li" key={p.phase} delay={i * 140} className="relative pb-12 last:pb-0">
               <span
-                className={`absolute -left-[41px] flex h-5 w-5 items-center justify-center rounded-full ring-4 ring-secondary ${
-                  p.active ? 'bg-gold' : 'bg-plum-darker border border-gold/40'
+                className={`absolute -left-[41px] flex h-5 w-5 items-center justify-center rounded-full ring-4 ring-off-white ${
+                  p.active ? 'bg-primary' : 'border border-primary/40 bg-card'
                 }`}
               >
-                {p.active && <span className="h-2 w-2 animate-ping rounded-full bg-forest-black" />}
+                {p.active && (
+                  <span className="h-2 w-2 animate-ping rounded-full bg-primary-foreground" />
+                )}
               </span>
               <div className="flex items-baseline gap-3">
                 <span className="font-display text-2xl font-semibold text-primary">{p.phase}</span>
@@ -104,10 +100,8 @@ export function Roadmap() {
                   {p.status}
                 </span>
               </div>
-              <h3 className="mt-4 font-display text-xl font-semibold text-secondary-foreground">
-                {p.title}
-              </h3>
-              <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-secondary-foreground/70">
+              <h3 className="mt-4 font-display text-xl font-semibold text-foreground">{p.title}</h3>
+              <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
                 {p.body}
               </p>
             </Reveal>

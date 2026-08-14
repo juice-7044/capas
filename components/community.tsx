@@ -44,14 +44,14 @@ export function Community() {
   }, [query, filter])
 
   return (
-    <section id="community" className="relative py-28 sm:py-36">
+    <section id="community" className="relative bg-off-white py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="font-label text-[0.7rem] text-gold md:text-xs">The founding audience</p>
-          <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
+          <p className="font-label text-[0.7rem] text-primary md:text-xs">The founding audience</p>
+          <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-balance text-foreground sm:text-5xl">
             Take the first seat. Fund the first chair.
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-ivory-dim">
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
             We reopen when the room fills. Every gift, from $1 up, is a name on the founding wall and
             a minute of instruction waiting for a Bronx student the day the doors open.
           </p>
@@ -129,7 +129,7 @@ export function Community() {
 
                 <button
                   type="submit"
-                  className="metallic-gold mt-5 w-full rounded-full py-3.5 text-base font-semibold transition-transform hover:scale-[1.02]"
+                  className="btn-green mt-5 w-full rounded-full py-3.5 text-base font-semibold transition-transform hover:scale-[1.02]"
                 >
                   Give ${amount} &amp; fund a chair
                 </button>

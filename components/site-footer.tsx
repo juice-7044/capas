@@ -1,49 +1,32 @@
+import Link from 'next/link'
 import { NewsletterForm } from '@/components/newsletter-form'
-
-const COLUMNS = [
-  {
-    title: 'Resources',
-    links: ['Annual reports', '990s & audits', 'Teaching artist applications', 'Partnership PDF'],
-  },
-  {
-    title: 'Legal',
-    links: ['Privacy', 'Terms', 'Cookie settings', 'Board of Directors'],
-  },
-]
-
-const SOCIALS = [
-  { label: 'Facebook', href: 'https://facebook.com/lolalouiscapas' },
-  { label: 'Instagram', href: 'https://instagram.com/lolalouiscapas' },
-  { label: 'YouTube', href: 'https://youtube.com/capas718' },
-  {
-    label: 'LinkedIn',
-    href: 'https://linkedin.com/company/lola-louis-creative-performing-arts-inc',
-  },
-]
+import { FOOTER_COLUMNS, SITE, SOCIALS } from '@/lib/site'
 
 export function SiteFooter() {
   return (
-    <footer className="bg-gradient-to-b from-plum-deep to-plum-darker">
+    <footer className="border-t border-border bg-muted">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.5fr_1.3fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_1.3fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
-              <span className="font-display text-lg font-semibold text-ivory">CAPAS</span>
+              <span className="inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
+              <span className="font-display text-lg font-semibold text-foreground">
+                {SITE.short}
+              </span>
             </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ivory-dim">
-              Lola Louis&apos; Creative &amp; Performing Arts. Thirty years of free performing arts
-              in the Northeast Bronx&mdash;raising the curtain again.
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              {SITE.name}. Thirty years of free performing arts in the Northeast Bronx&mdash;raising
+              the curtain again.
             </p>
-            <p className="mt-6 text-balance font-display text-lg leading-snug text-ivory">
-              The chairs are empty. The stage is not.
+            <p className="mt-6 text-balance font-display text-lg leading-snug text-foreground">
+              {SITE.tagline}
             </p>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h3 className="font-label text-[0.7rem] text-gold">Newsletter</h3>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ivory-dim">
+            <h3 className="font-label text-[0.7rem] text-primary">Newsletter</h3>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               First name required. We don&apos;t do &ldquo;Dear Supporter.&rdquo;
             </p>
             <div className="mt-4 max-w-xs">
@@ -56,7 +39,7 @@ export function SiteFooter() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-ivory-dim transition-colors hover:text-gold"
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {s.label}
                   </a>
@@ -65,18 +48,18 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {COLUMNS.map((col) => (
+          {FOOTER_COLUMNS.map((col) => (
             <div key={col.title}>
-              <h3 className="font-label text-[0.7rem] text-gold">{col.title}</h3>
-              <ul className="mt-4 space-y-3">
+              <h3 className="font-label text-[0.7rem] text-primary">{col.title}</h3>
+              <ul className="mt-4 flex flex-col gap-2.5">
                 {col.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-ivory-dim transition-colors hover:text-gold"
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -85,25 +68,28 @@ export function SiteFooter() {
         </div>
 
         {/* Income threshold + honor-system footnote (footer only) */}
-        <div className="mt-14 rounded-xl border border-gold/20 bg-forest-black/30 p-6">
-          <p className="text-[13px] leading-relaxed text-ivory-dim">
-            <span className="text-ivory">*Free tuition for families with household income below
-            $150,000.</span>{' '}
+        <div className="mt-14 rounded-xl border border-border bg-card p-6">
+          <p className="text-[13px] leading-relaxed text-muted-foreground">
+            <span className="font-medium text-foreground">
+              *Free tuition for families with household income below $150,000.
+            </span>{' '}
             We use honor-system self-attestation because we trust our community. If you can pay, we
-            encourage donating to fund another seat. If you can&apos;t, no questions, no shame. CAPAS
-            is a 501(c)(3) nonprofit, EIN XX-XXXXXXX.
+            encourage donating to fund another seat. If you can&apos;t, no questions, no shame.
           </p>
         </div>
 
-        <div className="mt-8 flex flex-col gap-2 border-t border-gold/20 pt-8 text-sm text-ivory-dim sm:flex-row sm:items-center sm:justify-between">
-          <p>All donations tax-deductible to the fullest extent of the law.</p>
+        <div className="mt-8 flex flex-col gap-2 border-t border-border pt-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            {SITE.name} is a 501(c)(3) nonprofit. Donations tax-deductible to the fullest extent of
+            the law.
+          </p>
           <p>
             Questions?{' '}
             <a
-              href="mailto:info@lolalouiscapas.org"
-              className="text-gold underline-offset-4 hover:underline"
+              href={`mailto:${SITE.email}`}
+              className="text-primary underline-offset-4 hover:underline"
             >
-              info@lolalouiscapas.org
+              {SITE.email}
             </a>
           </p>
         </div>

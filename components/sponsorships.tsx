@@ -35,22 +35,14 @@ const TIERS = [
 
 export function Sponsorships() {
   return (
-    <section id="partnerships" className="relative overflow-hidden bg-forest-black py-28 sm:py-36">
-      {/* Chalk-sketch texture */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(42deg,#f5f0e8 0 1px,transparent 1px 7px),repeating-linear-gradient(-38deg,#f5f0e8 0 1px,transparent 1px 9px)',
-        }}
-      />
+    <section id="partnerships" className="relative overflow-hidden bg-muted py-28 sm:py-36">
       <div className="relative mx-auto max-w-7xl px-6">
         <Reveal className="max-w-2xl">
-          <p className="font-label text-[0.7rem] text-gold md:text-xs">Corporate partnerships</p>
-          <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
+          <p className="font-label text-[0.7rem] text-primary md:text-xs">Corporate partnerships</p>
+          <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-balance text-foreground sm:text-5xl">
             Build with us, not for us.
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-ivory-dim">
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
             We&apos;re a pre-launch nonprofit with a thirty-year track record and no building yet.
             Partner early and your name is drawn into the blueprint&mdash;not stapled on after the
             fact. Every tier is a hand on the same pencil.
@@ -120,7 +112,7 @@ export function Sponsorships() {
               </ul>
 
               <a
-                href="#"
+                href="/partnerships"
                 className={cn(
                   'mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.03]',
                   tier.featured
@@ -135,11 +127,11 @@ export function Sponsorships() {
         </div>
 
         <Reveal delay={120} className="mx-auto mt-14 max-w-3xl text-center">
-          <blockquote className="font-display text-xl leading-relaxed text-balance text-ivory sm:text-2xl">
+          <blockquote className="font-display text-xl leading-relaxed text-balance text-foreground sm:text-2xl">
             &ldquo;We didn&apos;t want to sponsor a finished thing. We wanted to help build it from
             an empty room.&rdquo;
           </blockquote>
-          <p className="font-label mt-4 text-[0.65rem] text-ivory-dim">
+          <p className="font-label mt-4 text-[0.65rem] text-muted-foreground">
             &mdash; An early partner
           </p>
         </Reveal>

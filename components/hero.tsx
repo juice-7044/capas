@@ -1,88 +1,100 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, useReducedMotion } from 'framer-motion'
+import { SITE } from '@/lib/site'
 
 export function Hero() {
   const reduce = useReducedMotion()
 
   return (
-    <section id="top" className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
-      {/* Cinematic empty-chair photograph */}
-      <Image
-        src="/images/hero-empty-chair.png"
-        alt="A single empty folding chair lit by one spotlight, rows of chairs fading into darkness in a church basement"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+    <section id="top" className="relative min-h-[92svh] w-full overflow-hidden bg-muted pt-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 lg:grid-cols-2 lg:gap-14 lg:py-20">
+        {/* Copy */}
+        <div className="relative z-10">
+          <motion.p
+            initial={reduce ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="font-label text-[0.7rem] text-primary md:text-xs"
+          >
+            {SITE.name}
+          </motion.p>
 
-      {/* Legibility scrims */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-forest-black/80 via-forest-black/30 to-forest-black" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,transparent_20%,rgba(6,14,8,0.55)_75%)]" />
+          <motion.h1
+            initial={reduce ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.08 }}
+            className="mt-5 text-balance font-display text-4xl leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-7xl"
+          >
+            <span className="block font-light italic text-muted-foreground">
+              Every chair on this stage
+            </span>
+            <span className="block font-black text-gradient-green">is waiting for someone</span>
+            <span className="block font-light">who can&apos;t afford to sit in it.</span>
+          </motion.h1>
 
-      {/* Overlay copy */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <motion.p
-          initial={reduce ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="font-label mb-6 text-[0.7rem] text-gold/90 md:text-xs"
-        >
-          Lola Louis&apos; Creative &amp; Performing Arts
-        </motion.p>
+          <motion.p
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mt-7 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg"
+          >
+            For thirty years we taught the Northeast Bronx to sing, dance, and take the stage. Then
+            we lost our space. We&apos;re raising the curtain again&mdash;and every seat we fill
+            brings us closer to opening the doors.
+          </motion.p>
 
-        <motion.h1
-          initial={reduce ? false : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.1 }}
-          className="max-w-4xl text-balance font-display text-4xl leading-[1.05] text-ivory sm:text-6xl lg:text-7xl"
-        >
-          <span className="block font-light italic text-ivory/85">The chairs are empty.</span>
-          <span className="block font-black text-gradient-gold">The stage is not.</span>
-        </motion.h1>
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.32 }}
+            className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+          >
+            <Link
+              href="/donate"
+              className="btn-green inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-semibold transition-transform hover:scale-[1.03]"
+            >
+              Fund a Chair · $1
+            </Link>
+            <Link
+              href="/about"
+              className="inline-flex items-center justify-center rounded-full border border-primary/50 px-7 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
+            >
+              Our 30-Year Story
+            </Link>
+            <Link
+              href="/partnerships"
+              className="btn-purple inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-semibold transition-transform hover:scale-[1.03]"
+            >
+              Partner With Us
+            </Link>
+          </motion.div>
 
-        <motion.p
-          initial={reduce ? false : { opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.25 }}
-          className="mt-7 max-w-xl text-pretty text-base leading-relaxed text-ivory-dim md:text-lg"
-        >
-          For thirty years we taught the Northeast Bronx to sing, dance, and take the stage. Then we
-          lost our space. We&apos;re raising the curtain again—and every seat we fill brings us
-          closer to opening the doors.
-        </motion.p>
+          <p className="mt-8 max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
+            We don&apos;t teach you to perform. We teach you to show up&mdash;for yourself, for your
+            future, for your family.
+          </p>
+        </div>
 
+        {/* Image */}
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-9 flex flex-col items-center gap-3 sm:flex-row"
+          initial={reduce ? false : { opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.15 }}
+          className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-border shadow-2xl shadow-primary/10"
         >
-          <a
-            href="#community"
-            className="metallic-gold inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-semibold transition-transform hover:scale-[1.03]"
-          >
-            Fund a Chair · $1
-          </a>
-          <a
-            href="#roadmap"
-            className="inline-flex items-center justify-center rounded-full border border-gold/60 px-7 py-3 text-sm font-semibold text-ivory transition-colors hover:bg-gold/10"
-          >
-            See the Vision
-          </a>
-          <a
-            href="#partnerships"
-            className="inline-flex items-center justify-center rounded-full bg-plum-deep px-7 py-3 text-sm font-semibold text-gold transition-colors hover:bg-plum-darker"
-          >
-            Partner With Us
-          </a>
+          <Image
+            src="/images/hero-chairs-light.png"
+            alt="Rows of empty wooden chairs in a bright community hall, one chair catching a warm sunbeam"
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/15 to-transparent" />
         </motion.div>
-
-        <p className="font-label absolute bottom-8 left-1/2 -translate-x-1/2 text-[0.6rem] text-ivory-dim/70">
-          Scroll · the house is waiting
-        </p>
       </div>
     </section>
   )

@@ -9,54 +9,49 @@ type ClassItem = {
   ages: string
   blurb: string
   Icon: LucideIcon
-  surface: string
 }
 
 const CLASSES: ClassItem[] = [
   {
     name: 'Piano',
     ages: '4\u201318 · Adult · Senior',
-    blurb: 'Weekly one-on-one and small-group lessons on real acoustic uprights, beginner to advanced.',
+    blurb:
+      'Weekly one-on-one and small-group lessons on real acoustic uprights, beginner to advanced.',
     Icon: Piano,
-    surface:
-      'repeating-linear-gradient(90deg,#1a2620 0 6px,#22322a 6px 8px),repeating-linear-gradient(0deg,#141e18 0 22px,#1c2a22 22px 24px)',
   },
   {
     name: 'Ballet',
     ages: '4\u201318 · Adult',
-    blurb: 'Classical technique on a sprung, insured floor\u2014barre, center, and a spring recital for anyone who wants one.',
+    blurb:
+      'Classical technique on a sprung, insured floor\u2014barre, center, and a spring recital for anyone who wants one.',
     Icon: Music2,
-    surface:
-      'radial-gradient(circle at 30% 20%,rgba(201,162,39,0.10),transparent 40%),linear-gradient(135deg,#2a2036,#1c1526)',
   },
   {
     name: 'Hip-Hop & Tap',
     ages: '6\u201318',
-    blurb: 'Foundations, choreography, and freestyle from Bronx-born teaching artists. The borough that invented it, teaching it.',
+    blurb:
+      'Foundations, choreography, and freestyle from Bronx-born teaching artists. The borough that invented it, teaching it.',
     Icon: Mic2,
-    surface: 'linear-gradient(160deg,#3a2a10,#1f1608)',
   },
   {
     name: 'Guitar',
     ages: '10\u201318 · Adult',
-    blurb: 'Acoustic and electric, from first chords to full songs. Instruments provided\u2014no gear required to start.',
+    blurb:
+      'Acoustic and electric, from first chords to full songs. Instruments provided\u2014no gear required to start.',
     Icon: Guitar,
-    surface: 'repeating-linear-gradient(85deg,#241a10 0 10px,#2c2013 10px 13px)',
   },
   {
     name: 'Violin',
     ages: '8\u201318 · Adult',
     blurb: 'Suzuki-informed strings for every age, building toward a neighborhood chamber ensemble.',
     Icon: Drum,
-    surface:
-      'repeating-linear-gradient(0deg,#0d1a24 0 18px,#12222e 18px 20px),repeating-linear-gradient(90deg,#0d1a24 0 18px,#12222e 18px 20px)',
   },
   {
     name: 'Drama',
     ages: '8\u201318 · Adult',
-    blurb: 'Improv, scene study, and stagecraft\u2014ending in a real production on a real stage.',
+    blurb:
+      'Improv, scene study, and stagecraft\u2014ending in a real production on a real stage.',
     Icon: Drama,
-    surface: 'linear-gradient(160deg,#3a1420,#210a12)',
   },
 ]
 
@@ -66,28 +61,23 @@ function Door({ c, delay, onOpen }: { c: ClassItem; delay: number; onOpen: () =>
       <button
         type="button"
         onClick={onOpen}
-        className="group relative block h-full w-full overflow-hidden rounded-2xl border border-border bg-card text-left [perspective:1200px] hover:[animation:door-shake_0.5s_ease-in-out]"
+        className="group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-7 text-left transition-shadow hover:shadow-xl hover:shadow-primary/10 hover:[animation:door-shake_0.5s_ease-in-out]"
       >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(201,162,39,0.25),transparent_55%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        <div
-          className="relative z-10 flex h-full flex-col justify-between p-7"
-          style={{ backgroundImage: c.surface }}
-        >
-          <div className="flex items-start justify-between">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-forest-black/50 text-gold ring-1 ring-gold/30">
-              <c.Icon className="h-6 w-6" />
-            </span>
-            <span className="font-label inline-flex items-center gap-1.5 rounded-full bg-ivory/10 px-3 py-1 text-[0.6rem] text-ivory-dim">
-              <Lock className="h-3 w-3" /> Locked
-            </span>
-          </div>
-          <div className="mt-10">
-            <h3 className="font-display text-2xl font-semibold text-ivory">{c.name}</h3>
-            <p className="mt-1 text-sm text-ivory-dim">Ages {c.ages}</p>
-            <p className="mt-5 text-sm font-medium text-gold">
-              Opens at $250K &middot; join the waitlist &rarr;
-            </p>
-          </div>
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green to-purple opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <div className="flex items-start justify-between">
+          <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
+            <c.Icon className="h-6 w-6" />
+          </span>
+          <span className="font-label inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-[0.6rem] text-muted-foreground">
+            <Lock className="h-3 w-3" /> Locked
+          </span>
+        </div>
+        <div className="mt-10">
+          <h3 className="font-display text-2xl font-semibold text-foreground">{c.name}</h3>
+          <p className="mt-1 text-sm text-muted-foreground">Ages {c.ages}</p>
+          <p className="mt-5 text-sm font-medium text-primary">
+            Opens at $250K &middot; join the waitlist &rarr;
+          </p>
         </div>
       </button>
     </Reveal>
@@ -118,40 +108,40 @@ function Modal({ c, onClose }: { c: ClassItem; onClose: () => void }) {
         type="button"
         aria-label="Close"
         onClick={onClose}
-        className="absolute inset-0 bg-forest-black/80 backdrop-blur-sm"
+        className="absolute inset-0 bg-foreground/50 backdrop-blur-sm"
       />
-      <div className="animate-rise relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-gold/25 bg-card">
+      <div className="animate-rise relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-border bg-card">
         <div className="p-8 sm:p-10">
           <button
             type="button"
             onClick={onClose}
             aria-label="Close"
-            className="absolute right-5 top-5 rounded-full p-1.5 text-ivory-dim transition-colors hover:bg-ivory/10 hover:text-ivory"
+            className="absolute right-5 top-5 rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <X className="h-5 w-5" />
           </button>
-          <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-forest-black/50 text-gold ring-1 ring-gold/30">
+          <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
             <c.Icon className="h-7 w-7" />
           </span>
-          <h3 className="mt-6 font-display text-3xl font-semibold text-ivory">{c.name}</h3>
-          <p className="mt-1 text-sm text-ivory-dim">Ages {c.ages}</p>
-          <p className="mt-5 text-[15px] leading-relaxed text-ivory-dim">{c.blurb}</p>
+          <h3 className="mt-6 font-display text-3xl font-semibold text-foreground">{c.name}</h3>
+          <p className="mt-1 text-sm text-muted-foreground">Ages {c.ages}</p>
+          <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">{c.blurb}</p>
 
-          <div className="mt-7 rounded-xl border border-gold/20 bg-plum-darker/50 p-4 text-sm text-ivory-dim">
-            <span className="font-medium text-ivory">This class is locked.</span> It opens the day we
-            hit $250K and sign a lease. Join the waitlist and we&apos;ll hold your spot the moment
-            the doors open&mdash;no tuition, ever.
+          <div className="mt-7 rounded-xl border border-border bg-muted p-4 text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">This class is locked.</span> It opens the
+            day we hit $250K and sign a lease. Join the waitlist and we&apos;ll hold your spot the
+            moment the doors open&mdash;no tuition, ever.
           </div>
 
           {joined ? (
-            <p className="mt-6 rounded-full bg-gold/15 px-6 py-3 text-center text-sm font-semibold text-gold">
+            <p className="mt-6 rounded-full bg-primary/10 px-6 py-3 text-center text-sm font-semibold text-primary">
               You&apos;re on the list. We&apos;ll be in touch the day the doors open.
             </p>
           ) : (
             <button
               type="button"
               onClick={() => setJoined(true)}
-              className="metallic-gold mt-6 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-transform hover:scale-[1.02]"
+              className="btn-green mt-6 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-transform hover:scale-[1.02]"
             >
               Join the {c.name} waitlist
             </button>
@@ -166,14 +156,14 @@ export function Classes() {
   const [active, setActive] = useState<ClassItem | null>(null)
 
   return (
-    <section id="classes" className="relative bg-forest-black py-28 sm:py-36">
+    <section id="classes" className="relative bg-muted py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="max-w-2xl">
-          <p className="font-label text-[0.7rem] text-gold md:text-xs">Behind these doors</p>
-          <h2 className="mt-5 text-balance font-display text-3xl font-semibold tracking-tight sm:text-5xl">
+          <p className="font-label text-[0.7rem] text-primary md:text-xs">Behind these doors</p>
+          <h2 className="mt-5 text-balance font-display text-3xl font-semibold tracking-tight text-foreground sm:text-5xl">
             Every door is locked. Together we hold the key.
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-ivory-dim">
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
             No classes are running yet. Each door below opens the day we reach $250K and sign a
             lease. Tap one to see what&apos;s inside&mdash;and hold your free spot on the waitlist.
           </p>

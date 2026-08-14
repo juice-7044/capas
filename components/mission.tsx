@@ -5,7 +5,7 @@ import { Reveal } from '@/components/reveal'
 
 export function Mission() {
   return (
-    <section id="mission" className="relative bg-forest-deep">
+    <section id="mission" className="relative bg-off-white">
       <div className="grid lg:grid-cols-2">
         {/* Full-bleed documentary image */}
         <div className="relative min-h-[52vh] lg:min-h-[88vh]">
@@ -16,19 +16,18 @@ export function Mission() {
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-transparent to-transparent lg:bg-gradient-to-r" />
         </div>
 
         {/* Text */}
-        <div className="flex items-center px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
+        <div className="flex items-center bg-muted px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
           <Reveal className="max-w-xl">
-            <p className="font-label text-[0.7rem] text-gold md:text-xs">Why we&apos;re free</p>
-            <h2 className="mt-5 text-balance font-display text-3xl font-semibold leading-tight text-ivory sm:text-5xl">
+            <p className="font-label text-[0.7rem] text-primary md:text-xs">Why we&apos;re free</p>
+            <h2 className="mt-5 text-balance font-display text-3xl font-semibold leading-tight text-foreground sm:text-5xl">
               Free isn&apos;t a discount.
               <br />
-              <span className="text-gradient-gold">It&apos;s a door.</span>
+              <span className="text-gradient-green">It&apos;s a door.</span>
             </h2>
-            <div className="mt-6 space-y-5 text-base leading-relaxed text-ivory-dim md:text-lg">
+            <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>
                 In the Northeast Bronx, a year of private dance or music lessons can cost more than a
                 month&apos;s rent. For most families here, that isn&apos;t a hard choice—it&apos;s no
@@ -40,10 +39,10 @@ export function Mission() {
                 every class will be tuition-free, for every age, from four to eighty-eight.
               </p>
             </div>
-            <p className="mt-8 border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-ivory-dim/80">
-              <span className="font-medium text-ivory">A note on eligibility:</span> we prioritize
-              families earning under $150,000, verified once at enrollment on the honor system. No
-              paperwork trails, no annual re-proving. Ask, and you&apos;re in.
+            <p className="mt-8 border-l-2 border-primary/50 pl-4 text-sm leading-relaxed text-muted-foreground">
+              <span className="font-medium text-foreground">A note on eligibility:</span> we
+              prioritize families earning under $150,000, verified once at enrollment on the honor
+              system. No paperwork trails, no annual re-proving. Ask, and you&apos;re in.
             </p>
           </Reveal>
         </div>
