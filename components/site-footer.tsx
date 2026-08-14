@@ -1,8 +1,6 @@
+import { NewsletterForm } from '@/components/newsletter-form'
+
 const COLUMNS = [
-  {
-    title: 'Connect',
-    links: ['Newsletter', 'SMS alerts', 'TikTok', 'Instagram', 'LinkedIn'],
-  },
   {
     title: 'Resources',
     links: ['Annual reports', '990s & audits', 'Teaching artist applications', 'Partnership PDF'],
@@ -13,11 +11,21 @@ const COLUMNS = [
   },
 ]
 
+const SOCIALS = [
+  { label: 'Facebook', href: 'https://facebook.com/lolalouiscapas' },
+  { label: 'Instagram', href: 'https://instagram.com/lolalouiscapas' },
+  { label: 'YouTube', href: 'https://youtube.com/capas718' },
+  {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/company/lola-louis-creative-performing-arts-inc',
+  },
+]
+
 export function SiteFooter() {
   return (
     <footer className="bg-gradient-to-b from-plum-deep to-plum-darker">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_1.3fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5">
               <span className="inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
@@ -30,6 +38,31 @@ export function SiteFooter() {
             <p className="mt-6 text-balance font-display text-lg leading-snug text-ivory">
               The chairs are empty. The stage is not.
             </p>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="font-label text-[0.7rem] text-gold">Newsletter</h3>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ivory-dim">
+              First name required. We don&apos;t do &ldquo;Dear Supporter.&rdquo;
+            </p>
+            <div className="mt-4 max-w-xs">
+              <NewsletterForm />
+            </div>
+            <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
+              {SOCIALS.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-ivory-dim transition-colors hover:text-gold"
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {COLUMNS.map((col) => (

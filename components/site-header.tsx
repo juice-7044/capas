@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils'
 
 const NAV = [
   { label: 'Why Free', href: '#mission' },
-  { label: 'Who\u2019s Waiting', href: '#transformations' },
   { label: 'The Vision', href: '#roadmap' },
   { label: 'Classes', href: '#classes' },
   { label: 'Partners', href: '#partnerships' },

@@ -1,7 +1,6 @@
 import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
 import { Mission } from '@/components/mission'
-import { Transformations } from '@/components/transformations'
 import { Impact } from '@/components/impact'
 import { Roadmap } from '@/components/roadmap'
 import { Classes } from '@/components/classes'
@@ -18,7 +17,6 @@ export default function Home() {
       <main>
         <Hero />
         <Mission />
-        <Transformations />
         <Impact />
         <Roadmap />
         <Classes />
