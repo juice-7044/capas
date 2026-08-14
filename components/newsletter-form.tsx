@@ -16,7 +16,7 @@ export function NewsletterForm() {
 
   if (submitted) {
     return (
-      <p className="text-pretty text-sm leading-relaxed text-foreground">
+      <p className="text-pretty text-sm leading-relaxed text-cream">
         Thanks, {firstName.trim()}. You&apos;re on the list&mdash;we&apos;ll only write when it
         matters.
       </p>
@@ -52,7 +52,7 @@ export function NewsletterForm() {
         />
         <button
           type="submit"
-          className="btn-green shrink-0 rounded-lg px-5 py-2.5 text-sm font-semibold transition-transform hover:scale-[1.03]"
+          className="shrink-0 rounded-lg bg-cream px-5 py-2.5 text-sm font-semibold text-primary transition-transform hover:scale-[1.03]"
         >
           Join
         </button>

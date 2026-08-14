@@ -46,8 +46,8 @@ export const FOOTER_COLUMNS = [
   {
     title: 'Legal',
     links: [
-      { label: 'Privacy', href: '#' },
-      { label: 'Terms', href: '#' },
+      { label: 'Privacy', href: '/privacy' },
+      { label: 'Terms', href: '/terms' },
       { label: 'Annual Reports', href: '#' },
       { label: 'Board of Directors', href: '/board' },
     ],

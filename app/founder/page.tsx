@@ -7,7 +7,7 @@ import { Reveal } from '@/components/reveal'
 export const metadata: Metadata = {
   title: 'Lola Louis · Founder & Artistic Director | CAPAS',
   description:
-    'The story of Lola Louis — griot, teaching artist, and founder of Lola Louis\u2019 Creative & Performing Arts, who has spent three decades giving the Northeast Bronx a free stage.',
+    'The story of Lola Louis (1950s\u20132023) \u2014 griot, teaching artist, and founder of Lola Louis\u2019 Creative & Performing Arts, who spent three decades making the performing arts affordable and within reach for the Northeast Bronx.',
 }
 
 const PULL_QUOTES = [
@@ -22,23 +22,29 @@ export default function FounderPage() {
       <section className="border-b border-border bg-muted pt-32 pb-16 sm:pt-40 sm:pb-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <p className="font-label text-[0.7rem] text-primary md:text-xs">Founder & Artistic Director</p>
+            <p className="font-label text-[0.7rem] text-primary md:text-xs">
+              Founder & Artistic Director · In memoriam, 2023
+            </p>
             <h1 className="mt-5 text-balance font-display text-5xl font-semibold leading-[1.02] tracking-tight text-foreground sm:text-7xl">
               Lola Louis
             </h1>
             <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              For thirty years she has been the Bronx&apos;s griot &mdash; storyteller, teacher, and
-              keeper of a promise that the arts belong to everyone, regardless of what they can pay.
+              For nearly thirty years she was the Bronx&apos;s griot &mdash; storyteller, teacher,
+              and keeper of a promise that the arts belong to everyone, and that no child should be
+              turned away for lack of money.
             </p>
           </Reveal>
-          <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border shadow-2xl shadow-secondary/15">
+          <Reveal
+            delay={120}
+            className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border shadow-2xl shadow-secondary/15"
+          >
             <Image
-              src="/images/lola-portrait.png"
-              alt="Portrait of Lola Louis, founder of CAPAS"
+              src="/images/lola-griot.png"
+              alt="Lola Louis performing as the Griot in The Children's Legacy, in a red, green, and gold sequined headwrap with large gold earrings"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 42vw"
-              className="object-cover"
+              className="object-cover object-top"
             />
           </Reveal>
         </div>
@@ -49,10 +55,10 @@ export default function FounderPage() {
         <div className="mx-auto max-w-2xl px-6">
           <Reveal className="space-y-6 text-lg leading-relaxed text-foreground">
             <p className="first-letter:float-left first-letter:mr-3 first-letter:font-display first-letter:text-7xl first-letter:font-semibold first-letter:leading-[0.8] first-letter:text-primary">
-              In 1994, Lola Louis carried a keyboard down a flight of church-basement stairs on
-              Boston Road and started teaching. There was no budget, no board, and no building she
-              could call her own &mdash; only a conviction that talent in the Northeast Bronx was
-              never the thing in short supply. Access was.
+              In 1994, Lola Louis carried a keyboard into a church in the South Bronx and started
+              teaching. There was no budget, no board, and no building she could call her own &mdash;
+              only a conviction that talent in the Bronx was never the thing in short supply. Access
+              was.
             </p>
             <p>
               She had trained as a performer and a griot, the West African tradition of the
@@ -71,36 +77,12 @@ export default function FounderPage() {
           <Reveal className="space-y-6 text-lg leading-relaxed text-foreground">
             <p>
               Word spread the way it does in a tight-knit borough &mdash; block by block, cousin to
-              cousin. Within a few seasons the basement was full, then too small. Graduates came back
-              as teachers so that tuition could stay exactly where Lola had set it: at zero. Over the
-              next three decades, more than two thousand Bronx residents &mdash; four-year-olds at
-              the barre, eighty-eight-year-olds at the microphone &mdash; would pass through her free
-              classes.
+              cousin. Within a few seasons the room was full, then too small. Lola kept tuition low
+              on purpose and quietly waived it whenever a family couldn&apos;t manage; graduates came
+              back to teach so that classes could stay affordable. Over the next three decades, more
+              than two thousand Bronx residents &mdash; four-year-olds at the barre,
+              eighty-eight-year-olds at the microphone &mdash; passed through her classes.
             </p>
-          </Reveal>
-        </div>
-
-        {/* Griot image feature */}
-        <Reveal className="mx-auto my-16 max-w-4xl px-6">
-          <figure className="overflow-hidden rounded-3xl border border-border">
-            <div className="relative aspect-[16/10]">
-              <Image
-                src="/images/lola-griot.png"
-                alt="Lola Louis performing as the Griot in The Children's Legacy, in a red, green, and gold headwrap"
-                fill
-                sizes="(max-width: 896px) 100vw, 896px"
-                className="object-cover object-top"
-              />
-            </div>
-            <figcaption className="bg-card px-6 py-4 text-sm text-muted-foreground">
-              Lola as the Griot in <em>The Children&apos;s Legacy</em>, her signature
-              intergenerational production.
-            </figcaption>
-          </figure>
-        </Reveal>
-
-        <div className="mx-auto max-w-2xl px-6">
-          <Reveal className="space-y-6 text-lg leading-relaxed text-foreground">
             <p>
               Her signature work, <em>The Children&apos;s Legacy</em>, put seniors and students on
               one stage &mdash; movement, music, and griot storytelling in a single evening. It was
@@ -117,11 +99,15 @@ export default function FounderPage() {
 
           <Reveal className="space-y-6 text-lg leading-relaxed text-foreground">
             <p>
-              In 2021, rising rents took the space. The chairs went into storage; the mission did
-              not. Today Lola is doing what she has always done &mdash; gathering the neighborhood,
-              telling the story true, and asking everyone to help hold the door open. She is
-              fundraising for a permanent Bronx home so no landlord can ever again decide whether a
-              child gets to take the stage.
+              In 2011, Hurricane Irene flooded the space and the program lost its home. Undeterred,
+              Lola moved the classes into her own apartment living room, teaching from the place she
+              lived so the work would not stop. She kept that going until she passed away in October
+              2023, and the apartment &mdash; the last classroom &mdash; had to be given up.
+            </p>
+            <p>
+              What she built did not end with her. We are carrying her mission forward and raising
+              the funds for a permanent Bronx home &mdash; this time with the goal of making every
+              class free, so the performing arts are truly within reach of all.
             </p>
           </Reveal>
         </div>
@@ -131,11 +117,11 @@ export default function FounderPage() {
       <section className="bg-secondary py-20 text-secondary-foreground">
         <Reveal className="mx-auto max-w-2xl px-6 text-center">
           <h2 className="text-balance font-display text-3xl font-semibold sm:text-4xl">
-            Help Lola finish what she started.
+            Finish what Lola started.
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-cream/80">
-            Thirty years in, the work continues &mdash; but it needs a home. Fund the reopening of
-            free performing arts for the Northeast Bronx.
+            Her work needs a home again. Fund the reopening &mdash; free performing arts for the
+            Northeast Bronx, in her memory.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
