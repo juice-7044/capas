@@ -30,9 +30,14 @@ const MILESTONES: Milestone[] = [
     body: 'CAPAS received its 501(c)(3) nonprofit status. Tuition was kept affordable on purpose, and the majority of students received full or partial scholarships — no child was ever turned away for inability to pay.',
   },
   {
+    year: '1990',
+    title: 'The Children\u2019s Legacy premieres',
+    body: 'Lola\u2019s signature intergenerational production was first written and produced off-off-Broadway to critically acclaimed reviews. Blending griot storytelling, movement, and music, it brought seniors and students onto one stage and went on to be presented at the Apollo, City Hall, and throughout NYC public schools.',
+  },
+  {
     year: '2006',
-    title: 'The Children\u2019s Legacy',
-    body: 'Lola\u2019s signature intergenerational production brought seniors and students onto one stage, blending griot storytelling, movement, and music — presented off-Broadway, at the Apollo, the United Nations, City Hall, and throughout NYC public schools.',
+    title: 'The Children\u2019s Legacy at the U.N.',
+    body: 'The work reached one of its highest stages when The Children\u2019s Legacy was performed at the United Nations — a Bronx production carrying its message to a global audience.',
   },
   {
     year: '2011',
