@@ -19,15 +19,28 @@ export function Hero() {
           'radial-gradient(120% 90% at 85% 0%, rgba(201,162,39,0.18) 0%, rgba(20,26,12,0) 45%), radial-gradient(100% 80% at 10% 100%, rgba(91,107,58,0.28) 0%, rgba(20,26,12,0) 55%)',
       }}
     >
+      {/* Background photo */}
+      <Image
+        src="/images/hero-stage-dark.png"
+        alt="A single warm spotlight falling on an empty theatre stage above rows of darkened, empty seats"
+        fill
+        priority
+        sizes="100vw"
+        className="pointer-events-none object-cover object-center"
+      />
+      {/* Overlays for legibility */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#141a0c] via-[#141a0c]/85 to-[#141a0c]/30" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#141a0c] via-transparent to-[#141a0c]/40" />
+
       <InstrumentAccent
         instrument="guitar"
         opacity={0.07}
         rotate={10}
         className="-right-24 -bottom-16 hidden h-[34rem] w-[34rem] [filter:brightness(0)_invert(1)] lg:block"
       />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 lg:grid-cols-2 lg:gap-14 lg:py-20">
+      <div className="relative mx-auto max-w-7xl px-6 py-12 lg:py-20">
         {/* Copy */}
-        <div className="relative z-10">
+        <div className="relative z-10 max-w-2xl">
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,25 +107,6 @@ export function Hero() {
             future, for your family.
           </p>
         </div>
-
-        {/* Image */}
-        <motion.div
-          initial={reduce ? false : { opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.15 }}
-          className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-border shadow-2xl shadow-primary/10"
-        >
-          <Image
-            src="/images/hero-stage-dark.png"
-            alt="A single warm spotlight falling on an empty theatre stage above rows of darkened, empty seats"
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-secondary/60 via-secondary/10 to-transparent mix-blend-multiply" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/25 to-transparent mix-blend-multiply" />
-        </motion.div>
       </div>
     </section>
   )
