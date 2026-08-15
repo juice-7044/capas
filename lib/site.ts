@@ -64,7 +64,10 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: 'Privacy', href: '/privacy' },
       { label: 'Terms', href: '/terms' },
-      { label: 'Annual Reports', href: '#' },
+      {
+        label: 'Annual Reports',
+        href: 'https://app.candid.org/profile/7052868/lola-louis-creative-performing-arts-inc-20-5554439',
+      },
       { label: 'Board of Directors', href: '/board' },
     ],
   },
