@@ -13,12 +13,15 @@ import { NextResponse, type NextRequest } from 'next/server'
  * redirected to its new home at /our-legacy.
  */
 function isPreviewHost(host: string) {
+  // Strip the port, if any, before matching.
+  const name = host.split(':')[0]
   return (
-    host.startsWith('localhost') ||
-    host.startsWith('127.0.0.1') ||
-    host.endsWith('.vusercontent.net') ||
-    host.endsWith('.v0.dev') ||
-    host.endsWith('.vercel.app')
+    name === 'localhost' ||
+    name === '127.0.0.1' ||
+    name.endsWith('.vusercontent.net') ||
+    name.endsWith('.v0.dev') ||
+    name.endsWith('.vercel.app') ||
+    name.endsWith('.vercel.run')
   )
 }
 
