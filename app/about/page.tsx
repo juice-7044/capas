@@ -25,14 +25,14 @@ const MILESTONES: Milestone[] = [
     body: 'What began with piano grew into a full studio. Lola founded Lola Louis\u2019 Creative & Performing Arts Studio (CAPAS), adding voice, drama, dance, art, and musical theatre for students ages three and up.',
   },
   {
-    year: '1994',
-    title: 'Officially a nonprofit',
-    body: 'CAPAS received its 501(c)(3) nonprofit status. Tuition was kept affordable on purpose, and the majority of students received full or partial scholarships — no child was ever turned away for inability to pay.',
-  },
-  {
     year: '1990',
     title: 'The Children\u2019s Legacy premieres',
     body: 'Lola\u2019s signature intergenerational production was first written and produced off-off-Broadway to critically acclaimed reviews. Blending griot storytelling, movement, and music, it brought seniors and students onto one stage and went on to be presented at the Apollo, City Hall, and throughout NYC public schools.',
+  },
+  {
+    year: '1994',
+    title: 'Officially a nonprofit',
+    body: 'CAPAS received its 501(c)(3) nonprofit status. Tuition was kept affordable on purpose, and the majority of students received full or partial scholarships — no child was ever turned away for inability to pay.',
   },
   {
     year: '2006',
