@@ -52,7 +52,7 @@ export function NewsletterForm() {
         />
         <button
           type="submit"
-          className="shrink-0 rounded-lg bg-cream px-5 py-2.5 text-sm font-semibold text-primary transition-transform hover:scale-[1.03]"
+          className="btn-gold shrink-0 rounded-lg px-5 py-2.5 text-sm font-semibold transition-transform hover:scale-[1.03]"
         >
           Join
         </button>

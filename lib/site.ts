@@ -3,6 +3,13 @@ export const SITE = {
   short: 'CAPAS',
   email: 'info@lolalouiscapas.org',
   tagline: 'The chairs are empty. The stage is not.',
+  zeffyUrl: 'https://www.zeffy.com/en-US/donation-form/light-up-a-chair',
+}
+
+/** Build a Zeffy donation link, pre-filling the amount when provided. */
+export function zeffyDonate(amount?: number) {
+  if (!amount || amount < 1) return SITE.zeffyUrl
+  return `${SITE.zeffyUrl}?amount=${Math.round(amount)}`
 }
 
 export const NAV = [

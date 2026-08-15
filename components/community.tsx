@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import { Reveal } from '@/components/reveal'
 import { cn } from '@/lib/utils'
+import { zeffyDonate } from '@/lib/site'
 import { Search } from 'lucide-react'
 
 const AMOUNTS = [1, 5, 25, 100]
@@ -26,7 +27,6 @@ type Filter = 'all' | 'founders' | 'grand'
 
 export function Community() {
   const [amount, setAmount] = useState<number>(1)
-  const [submitted, setSubmitted] = useState(false)
   const [query, setQuery] = useState('')
   const [filter, setFilter] = useState<Filter>('all')
 
@@ -60,84 +60,55 @@ export function Community() {
         <div className="mt-14 grid gap-8 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-start">
           {/* Donation card */}
           <Reveal className="rounded-2xl border border-primary/25 bg-card p-8">
-            {submitted ? (
-              <div className="flex min-h-[300px] flex-col items-center justify-center text-center">
-                <span className="inline-flex h-14 w-14 animate-chair-pulse items-center justify-center rounded-full bg-primary text-2xl font-bold text-primary-foreground">
-                  ♪
-                </span>
-                <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">
-                  You&apos;re a founding donor.
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Thank you for funding{' '}
-                  <span className="font-semibold text-primary">
-                    {amount} minute{amount === 1 ? '' : 's'}
-                  </span>{' '}
-                  of instruction. Your name joins the wall the day we open.
-                </p>
+            <h3 className="font-display text-2xl font-semibold text-foreground">Fund a chair</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              $1 = one minute of free arts education, held for opening day.
+            </p>
+
+            <div className="mt-6 grid grid-cols-4 gap-2">
+              {AMOUNTS.map((a) => (
                 <button
-                  onClick={() => setSubmitted(false)}
-                  className="mt-6 text-sm font-semibold text-foreground underline underline-offset-4"
+                  key={a}
+                  type="button"
+                  onClick={() => setAmount(a)}
+                  className={cn(
+                    'rounded-lg border py-2.5 text-sm font-semibold transition-colors',
+                    amount === a
+                      ? 'border-primary bg-primary text-primary-foreground'
+                      : 'border-border text-foreground hover:border-primary/50',
+                  )}
                 >
-                  Give again
+                  ${a}
                 </button>
+              ))}
+            </div>
+
+            <label className="mt-4 block text-sm">
+              <span className="sr-only">Custom amount</span>
+              <div className="flex items-center gap-2 rounded-lg border border-border px-3 focus-within:border-primary">
+                <span className="text-muted-foreground">$</span>
+                <input
+                  type="number"
+                  min={1}
+                  value={amount}
+                  onChange={(e) => setAmount(Math.max(1, Number(e.target.value) || 1))}
+                  className="w-full bg-transparent py-2.5 text-foreground outline-none"
+                  aria-label="Donation amount in dollars"
+                />
               </div>
-            ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault()
-                  setSubmitted(true)
-                }}
-              >
-                <h3 className="font-display text-2xl font-semibold text-foreground">Fund a chair</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  $1 = one minute of free arts education, held for opening day.
-                </p>
+            </label>
 
-                <div className="mt-6 grid grid-cols-4 gap-2">
-                  {AMOUNTS.map((a) => (
-                    <button
-                      key={a}
-                      type="button"
-                      onClick={() => setAmount(a)}
-                      className={cn(
-                        'rounded-lg border py-2.5 text-sm font-semibold transition-colors',
-                        amount === a
-                          ? 'border-primary bg-primary text-primary-foreground'
-                          : 'border-border text-foreground hover:border-primary/50',
-                      )}
-                    >
-                      ${a}
-                    </button>
-                  ))}
-                </div>
-
-                <label className="mt-4 block text-sm">
-                  <span className="sr-only">Custom amount</span>
-                  <div className="flex items-center gap-2 rounded-lg border border-border px-3 focus-within:border-primary">
-                    <span className="text-muted-foreground">$</span>
-                    <input
-                      type="number"
-                      min={1}
-                      value={amount}
-                      onChange={(e) => setAmount(Math.max(1, Number(e.target.value) || 1))}
-                      className="w-full bg-transparent py-2.5 text-foreground outline-none"
-                      aria-label="Donation amount in dollars"
-                    />
-                  </div>
-                </label>
-
-                <button
-                  type="submit"
-                  className="btn-green mt-5 w-full rounded-full py-3.5 text-base font-semibold transition-transform hover:scale-[1.02]"
-                >
-                  Give ${amount} &amp; fund a chair
-                </button>
-                <p className="mt-3 text-center text-xs text-muted-foreground">
-                  501(c)(3) · tax-deductible · secured checkout
-                </p>
-              </form>
-            )}
+            <a
+              href={zeffyDonate(amount)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-green mt-5 flex w-full items-center justify-center rounded-full py-3.5 text-base font-semibold transition-transform hover:scale-[1.02]"
+            >
+              Give ${amount} &amp; fund a chair
+            </a>
+            <p className="mt-3 text-center text-xs text-muted-foreground">
+              501(c)(3) · tax-deductible · secure checkout via Zeffy
+            </p>
           </Reveal>
 
           {/* Donor wall */}
