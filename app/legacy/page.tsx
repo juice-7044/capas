@@ -1,19 +1,22 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { SiteShell } from '@/components/site-shell'
 import { PageHero } from '@/components/page-hero'
+import { InstrumentAccent } from '@/components/instrument-accent'
 import { Reveal } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'Legacy · Who We Are, Alumni & Awards | CAPAS',
   description:
     'Who we are, our mission, the notable alumni who came through our doors, and the citations and awards CAPAS has earned for its work in the Bronx community.',
+  alternates: { canonical: '/legacy' },
 }
 
 const ALUMNI = [
   {
     name: 'Sean Nelson',
-    body: 'Recruited from CAPAS to star in the widely-acclaimed film “Fresh.” His other credits include the Broadway production of “The Shadow Box” and, on television, “New York Undercover,” “Law & Order,” and “The Corner,” among several other films.',
+    body: 'Recruited from CAPAS to star alongside Samuel L. Jackson in the widely-acclaimed film “Fresh.” His other credits include the Broadway production of “The Shadow Box” and, on television, “New York Undercover,” “Law & Order,” and “The Corner,” among several other films.',
   },
   {
     name: 'Afi McClendon',
@@ -45,8 +48,14 @@ export default function LegacyPage() {
       />
 
       {/* Who we are + Mission */}
-      <section className="bg-off-white py-24 sm:py-32">
-        <div className="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-2">
+      <section className="relative overflow-hidden bg-off-white py-24 sm:py-32">
+        <InstrumentAccent
+          instrument="violin"
+          opacity={0.05}
+          rotate={8}
+          className="-right-16 top-10 h-80 w-80"
+        />
+        <div className="relative mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-2">
           <Reveal>
             <p className="font-label text-[0.7rem] text-primary md:text-xs">Who we are</p>
             <h2 className="mt-4 text-balance font-display text-3xl font-semibold text-foreground sm:text-4xl">
@@ -108,8 +117,17 @@ export default function LegacyPage() {
       </section>
 
       {/* Notable alumni */}
-      <section className="bg-secondary py-24 text-secondary-foreground sm:py-32">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="relative overflow-hidden bg-secondary py-24 text-secondary-foreground sm:py-32">
+        <Image
+          src="/images/drummer.jpg"
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes="100vw"
+          className="pointer-events-none object-cover object-right opacity-15 mix-blend-luminosity"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/40" />
+        <div className="relative mx-auto max-w-6xl px-6">
           <Reveal className="max-w-2xl">
             <p className="font-label text-[0.7rem] text-cream/80 md:text-xs">Successful alumni</p>
             <h2 className="mt-4 text-balance font-display text-3xl font-semibold sm:text-4xl">

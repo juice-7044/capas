@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'framer-motion'
+import { InstrumentAccent } from '@/components/instrument-accent'
 import { SITE } from '@/lib/site'
 
 export function Hero() {
@@ -10,7 +11,13 @@ export function Hero() {
 
   return (
     <section id="top" className="relative min-h-[92svh] w-full overflow-hidden bg-muted pt-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 lg:grid-cols-2 lg:gap-14 lg:py-20">
+      <InstrumentAccent
+        instrument="guitar"
+        opacity={0.05}
+        rotate={10}
+        className="-right-24 -bottom-16 hidden h-[34rem] w-[34rem] lg:block"
+      />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 lg:grid-cols-2 lg:gap-14 lg:py-20">
         {/* Copy */}
         <div className="relative z-10">
           <motion.p

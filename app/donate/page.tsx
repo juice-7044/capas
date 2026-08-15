@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SiteShell } from '@/components/site-shell'
 import { PageHero } from '@/components/page-hero'
 import { DonateWidget } from '@/components/donate-widget'
+import { InstrumentAccent } from '@/components/instrument-accent'
 import { Reveal } from '@/components/reveal'
 import { ShieldCheck, HeartHandshake, FileText, Building2 } from 'lucide-react'
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Donate — Fund a Chair | Lola Louis\u2019 Creative & Performing Arts',
   description:
     'We reopen when the room fills. Fund a chair from $1 and put your name on the founding wall. 501(c)(3) — every gift is tax-deductible.',
+  alternates: { canonical: '/donate' },
 }
 
 const USES = [
@@ -38,8 +40,14 @@ export default function DonatePage() {
         description="No classes are running yet — we're honest about that. Every dollar goes to the building, the floors, and the teachers who turn an empty room into a stage. Give what you can; a dollar counts."
       />
 
-      <section className="bg-off-white py-20 sm:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+      <section className="relative overflow-hidden bg-off-white py-20 sm:py-28">
+        <InstrumentAccent
+          instrument="piano"
+          opacity={0.045}
+          rotate={6}
+          className="-right-20 bottom-8 hidden h-[32rem] w-[32rem] lg:block"
+        />
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div>
             <DonateWidget />
           </div>

@@ -2,12 +2,14 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { SiteShell } from '@/components/site-shell'
+import { InstrumentAccent } from '@/components/instrument-accent'
 import { Reveal } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'Lola Louis · Founder & Artistic Director | CAPAS',
   description:
     'The story of Lola Lenore Louis (1945\u20132023) \u2014 Trinidad-born actress, director, singer, pianist, and folk dancer who founded Lola Louis\u2019 Creative & Performing Arts to liberate young minds from what she called \u201climitation thinking.\u201d',
+  alternates: { canonical: '/founder' },
 }
 
 const CREDENTIALS = [
@@ -27,8 +29,14 @@ export default function FounderPage() {
   return (
     <SiteShell>
       {/* Hero */}
-      <section className="border-b border-border bg-muted pt-32 pb-16 sm:pt-40 sm:pb-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_1fr]">
+      <section className="relative overflow-hidden border-b border-border bg-muted pt-32 pb-16 sm:pt-40 sm:pb-24">
+        <InstrumentAccent
+          instrument="piano"
+          opacity={0.05}
+          rotate={-8}
+          className="-left-20 top-24 h-72 w-72"
+        />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
             <p className="font-label text-[0.7rem] text-primary md:text-xs">
               Founder & Artistic Director · 1945&ndash;2023
@@ -110,11 +118,18 @@ export default function FounderPage() {
               movement, music, and griot storytelling.
             </p>
             <p>
-              As founder and director of Lola Louis&apos; Creative and Performing Arts Studio
-              (CAPAS), she used theater and the creative arts as a medium to liberate and stimulate
-              the minds of urban youth, in the hope that they would rise above &ldquo;limitation
-              thinking.&rdquo; She provided the spark that awakened dormant talents in her students,
-              launching them into experiences and possibilities beyond their own expectations.
+              Her teaching began at home. In 1976 she started giving piano lessons out of her own
+              living room at Lowerre Place in the Northeast Bronx. That living-room studio grew, and
+              in 1985 she founded Lola Louis&apos; Creative and Performing Arts Studio (CAPAS),
+              expanding beyond piano into voice, drama, dance, art, and musical theatre. In 1994,
+              CAPAS was granted 501(c)(3) nonprofit status.
+            </p>
+            <p>
+              As founder and director of CAPAS, she used theater and the creative arts as a medium
+              to liberate and stimulate the minds of urban youth, in the hope that they would rise
+              above &ldquo;limitation thinking.&rdquo; She provided the spark that awakened dormant
+              talents in her students, launching them into experiences and possibilities beyond
+              their own expectations.
             </p>
           </Reveal>
 

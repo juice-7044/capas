@@ -1,7 +1,14 @@
+export const SITE_URL = 'https://www.lolalouiscapas.org'
+
 export const SITE = {
   name: "Lola Louis' Creative & Performing Arts",
   short: 'CAPAS',
   email: 'info@lolalouiscapas.org',
+  city: 'Bronx',
+  region: 'NY',
+  regionName: 'New York',
+  neighborhood: 'Northeast Bronx',
+  country: 'US',
   tagline: 'The chairs are empty. The stage is not.',
   zeffyUrl: 'https://www.zeffy.com/en-US/donation-form/light-up-a-chair',
 }

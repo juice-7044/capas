@@ -3,12 +3,14 @@ import { SiteShell } from '@/components/site-shell'
 import { PageHero } from '@/components/page-hero'
 import { Classes } from '@/components/classes'
 import { LeadForm } from '@/components/lead-form'
+import { InstrumentAccent } from '@/components/instrument-accent'
 import { Reveal } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'Programs · Free Classes, Opening Soon | CAPAS',
   description:
     'A preview of the free performing arts classes coming to the Northeast Bronx — piano, ballet, hip-hop, guitar, violin, and drama. Join the waitlist for opening day.',
+  alternates: { canonical: '/programs' },
 }
 
 export default function ProgramsPage() {
@@ -28,8 +30,14 @@ export default function ProgramsPage() {
       <Classes />
 
       {/* Waitlist */}
-      <section className="bg-off-white py-24 sm:py-32">
-        <div className="mx-auto grid max-w-5xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
+      <section className="relative overflow-hidden bg-off-white py-24 sm:py-32">
+        <InstrumentAccent
+          instrument="guitar"
+          opacity={0.05}
+          rotate={-12}
+          className="-left-24 top-8 hidden h-[30rem] w-[30rem] lg:block"
+        />
+        <div className="relative mx-auto grid max-w-5xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <p className="font-label text-[0.7rem] text-primary md:text-xs">Join the waitlist</p>
             <h2 className="mt-4 text-balance font-display text-3xl font-semibold text-foreground sm:text-4xl">
