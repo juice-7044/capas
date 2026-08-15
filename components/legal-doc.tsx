@@ -1,9 +1,11 @@
+import Link from 'next/link'
 import { Reveal } from '@/components/reveal'
 
 export type LegalSection = {
   heading: string
   paragraphs?: string[]
   bullets?: string[]
+  links?: { label: string; href: string }[]
 }
 
 export function LegalDoc({ sections }: { sections: LegalSection[] }) {
@@ -33,6 +35,32 @@ export function LegalDoc({ sections }: { sections: LegalSection[] }) {
                     </li>
                   ))}
                 </ul>
+              )}
+              {section.links && (
+                <div className="flex flex-wrap gap-x-6 gap-y-2 pt-1">
+                  {section.links.map((link) => {
+                    const isExternal = link.href.startsWith('http')
+                    return isExternal ? (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base font-medium text-primary underline-offset-4 hover:underline"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="text-base font-medium text-primary underline-offset-4 hover:underline"
+                      >
+                        {link.label}
+                      </Link>
+                    )
+                  })}
+                </div>
               )}
             </Reveal>
           ))}

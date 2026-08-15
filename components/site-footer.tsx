@@ -1,7 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react'
 import { NewsletterForm } from '@/components/newsletter-form'
 import { FOOTER_COLUMNS, SITE, SOCIALS } from '@/lib/site'
+
+const SOCIAL_ICONS = {
+  facebook: Facebook,
+  instagram: Instagram,
+  youtube: Youtube,
+  linkedin: Linkedin,
+} as const
 
 export function SiteFooter() {
   return (
@@ -34,19 +42,23 @@ export function SiteFooter() {
             <div className="mt-4 max-w-xs">
               <NewsletterForm />
             </div>
-            <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
-              {SOCIALS.map((s) => (
-                <li key={s.label}>
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-cream/75 transition-colors hover:text-cream"
-                  >
-                    {s.label}
-                  </a>
-                </li>
-              ))}
+            <ul className="mt-6 flex flex-wrap gap-3">
+              {SOCIALS.map((s) => {
+                const Icon = SOCIAL_ICONS[s.icon]
+                return (
+                  <li key={s.label}>
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={s.label}
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/25 text-cream/80 transition-colors hover:border-cream/60 hover:bg-cream/10 hover:text-cream"
+                    >
+                      <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+                    </a>
+                  </li>
+                )
+              })}
             </ul>
           </div>
 

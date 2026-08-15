@@ -8,14 +8,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/', priority: 1, changeFrequency: 'weekly' },
     { path: '/about', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/founder', priority: 0.8, changeFrequency: 'yearly' },
-    { path: '/legacy', priority: 0.8, changeFrequency: 'monthly' },
+    { path: '/our-legacy', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/programs', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/donate', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/partnerships', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/board', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/teachers', priority: 0.6, changeFrequency: 'monthly' },
+    { path: '/blog', priority: 0.7, changeFrequency: 'weekly' },
+    { path: '/gallery', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/contact', priority: 0.6, changeFrequency: 'yearly' },
     { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' },
+    { path: '/cookies', priority: 0.3, changeFrequency: 'yearly' },
     { path: '/terms', priority: 0.3, changeFrequency: 'yearly' },
   ]
 

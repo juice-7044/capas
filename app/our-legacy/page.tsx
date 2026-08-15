@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Legacy · Who We Are, Alumni & Awards | CAPAS',
   description:
     'Who we are, our mission, the notable alumni who came through our doors, and the citations and awards CAPAS has earned for its work in the Bronx community.',
-  alternates: { canonical: '/legacy' },
+  alternates: { canonical: '/our-legacy' },
 }
 
 const ALUMNI = [
