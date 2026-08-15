@@ -29,8 +29,8 @@ export function Hero() {
         className="pointer-events-none object-cover object-center"
       />
       {/* Overlays for legibility */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#141a0c] via-[#141a0c]/85 to-[#141a0c]/30" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#141a0c] via-transparent to-[#141a0c]/40" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#141a0c] via-[#141a0c]/90 to-[#141a0c]/75" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#141a0c] via-transparent to-[#141a0c]/50" />
 
       <InstrumentAccent
         instrument="guitar"
