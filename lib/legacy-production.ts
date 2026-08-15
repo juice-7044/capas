@@ -3,8 +3,28 @@ export const PRODUCTION = {
   tagline: 'A dramatic journey through African & African American history, guided by a Griot.',
   writtenBy: 'Lola Lenore Louis',
   presentedBy: "Lola Louis' Creative & Performing Arts, Inc.",
-  runtime: '45 minutes, performed without intermission',
+  runtime: '45 minutes, performed without intermission, as part of a larger presentation of plays',
   ageGuidance: 'Recommended for ages 10 and up',
+  directedBy: ['Leah DeAbreu-Goodwill', 'Shakira DeAbreu', 'Carolyn \u201CMeckha\u201D Cherry'],
+  originalProduction: {
+    label: 'Original off-Broadway production',
+    venue: 'Workshopped at The Wild Project',
+    address: '195 E. 3rd Street, New York, NY',
+    dates: 'July 25 & 26, 2025',
+  },
+  welcomeLetter: {
+    heading: 'A Note from the Director',
+    greeting: 'Dear Friends and Honored Guests,',
+    paragraphs: [
+      'It is with profound gratitude and deep emotion that I welcome you to our production of \u201CThe Children\u2019s Legacy.\u201D This performance represents not only an artistic endeavor but also a continuation of the vision and legacy of our founder, Lola Lenore Louis.',
+      'Lola\u2014a native of Trinidad and Tobago and a multifaceted artist: actress, director, singer, pianist, and ethnic folk dancer\u2014began this organization with a dream of providing high-quality arts education and performance opportunities in our community. What started in her living room has grown into the vibrant organization you support today. Though we lost our beloved founder in October 2023, her spirit infuses every aspect of this production.',
+      '\u201CThe Children\u2019s Legacy\u201D explores the profound connections between our past and present, examining how historical experiences shape our contemporary reality. Through this powerful narrative, we witness a journey of self-discovery, cultural reconnection, and healing\u2014themes that resonate deeply with our mission to empower through creative expression.',
+      'As you experience this performance, I invite you to open your heart to the stories being told, to reflect on your own cultural heritage, and to consider how we might collectively build a future that honors our past while creating new possibilities for the generations that follow.',
+    ],
+    signOff: 'With deepest appreciation,',
+    signature: 'Ann Lemond-Hume',
+    signatureTitle: 'Executive & Artistic Director, Lola Louis\u2019 Creative & Performing Arts, Inc.',
+  },
   synopsis: [
     "\u201CThe Children's Legacy\u201D is a powerful dramatic work that explores the connections between African American history, cultural identity, and contemporary social issues through a narrative that moves through time and space.",
     'The play centers on a young African American teenager who, disconnected from her cultural roots, embarks on a dream-like journey guided by a Griot\u2014a traditional West African storyteller and keeper of oral history. Through this spiritual guide, she encounters historical figures and ancestral voices that illuminate the rich tapestry of the African and African American experience.',
@@ -118,8 +138,38 @@ export const PRODUCTION = {
     },
     {
       name: 'Aaron See Yuen',
-      role: 'Prophet / Malcolm X',
-      bio: 'Of Venezuelan, African, and Native ancestry, Aaron See Yuen has credits as an actor, dancer, voice actor, singer, writer, poet, model, director, instructor, and producer.',
+      role: 'The Prophet / Malcolm X / Rehab Counselor',
+      bio: 'Born in the Bronx with Trinidadian, Bermudian, Chinese, Venezuelan, African, and Native ancestry, Aaron Wyling See Yuen has credits as an actor, dancer, voice actor, singer, writer, poet, model, director, instructor, and producer.',
+    },
+    {
+      name: 'Tatyani Lawton',
+      role: 'Shakira (Pregnancy Scene)',
+      bio: '\u201CI\u2019m so thankful to be part of this amazing show and even more excited to share it with you. Being on stage and working with this incredible cast has been such a joy, and I hope you feel the energy and hard work we\u2019ve put into this play. Thank you for coming\u2014I hope you enjoy the show as much as I\u2019ve enjoyed being part of it!\u201D',
+    },
+    {
+      name: 'Kyle P. Carter',
+      role: 'Martin Luther King Jr.',
+      bio: 'A versatile performer with credits across theatre, film, and television, including \u201CThe Oedipus Project\u201D (Off-Broadway), \u201CMiles Davis,\u201D and \u201CTo Be Young, Gifted and Black,\u201D plus screen roles in \u201CCSI: Miami\u201D and \u201CHope: A Brooklyn Story.\u201D A trained method actor with a BFA from Long Island University, Kyle is a former student of CAPAS.',
+    },
+    {
+      name: 'Warren Witter',
+      role: 'Marcus Garvey',
+      bio: 'A published author, mentor, mentor trainer, and young-adult pastor, Warren brings cultural depth to his work in ministry, advocacy, and personal development. Author of \u201CSons of Fathers,\u201D he expanded that vision through his \u201CLegacy Fathers\u201D curriculum and serves on boards including the Department of Juvenile Justice Faith Network. His mission is simple: to build legacies through love, faith, and intentional fatherhood.',
+    },
+    {
+      name: 'Osiris Kwabena Adjepong',
+      role: 'Garren / Obi / Ensemble',
+      bio: 'A proud Philadelphia native and rising high-school sophomore with a vibrant passion for the arts\u2014acting, poetry, science, basketball, tennis, and making music on his guitar. This performance marks his Off-Broadway debut, and he is honored to be part of \u201CThe Children\u2019s Legacy.\u201D',
+    },
+    {
+      name: 'Nazani Martin',
+      role: 'Crystal / Ewu / Ensemble',
+      bio: 'Making her theatrical debut in \u201CThe Children\u2019s Legacy.\u201D An accomplished dancer training since age 3, Nazani brings natural grace and expressive movement to her first acting role as she prepares to enter the 8th grade.',
+    },
+    {
+      name: 'Amir Garcia',
+      role: 'Child / Voices & Ensemble',
+      bio: 'Making his theatrical debut, this enthusiastic 12-year-old joined the cast after encouragement from his mother, Shakira. When not on stage, Amir enjoys fishing with his dad and entertaining his siblings with his natural talent for impressions and accents.',
     },
   ],
   creativeTeam: [
@@ -159,12 +209,32 @@ export const PRODUCTION = {
   producers: {
     executive: ['Ann Lemond-Hume, Juicy Media Group'],
     associate: ['The Louis Family'],
+    sponsors: ['Angela Louis King', 'Cecil \u201CBinky\u201D Louis'],
+    friends: ['Rose Wallace', 'Gregory Wallace', 'Carren Cain-West', 'James Calizaire'],
+    inKind: ['Theresa O\u2019Neal Redd'],
+    productionAssistants: ['Oliver Heaton', 'Brianna Fodera'],
     board: [
       'Ann Lemond-Hume \u2014 Artistic & Executive Director, Chairman',
       'Garrick Louis \u2014 Vice Chairman',
       'Renee Lemond \u2014 Treasurer',
       'Margaret Walker-Cumberbatch \u2014 Secretary',
     ],
+    specialThanks: [
+      'Tackice Mundle',
+      'Patricia Rudicel',
+      'Quincy Smith',
+      'Nancy Fields',
+      'Fredericka Bell-Berti',
+      'Harvey & Barbara Katzeff',
+      'Fely Simms',
+      'Omega Norton-Crable',
+      'Hasani Ekundayo',
+      'Priscilla Crowell',
+    ],
+  },
+  sponsorTribute: {
+    text: 'I make this donation in loving memory of my three sisters: Lois, Lola and Judy. We were all involved in the arts in various forms from an early age. Lois was our first leader, then Lola, Judy, and I were the followers. With much love and blessings.',
+    attribution: 'Angela Louis King',
   },
   dedication:
     'This production is dedicated in loving memory of Lola Lenore Louis (1945\u20132023), whose vision, passion, and commitment to artistic excellence continue to inspire everything we do.',
@@ -173,6 +243,92 @@ export const PRODUCTION = {
     attribution: 'Woody Dumas',
   },
 } as const
+
+export const CAST_BY_SCENE = [
+  {
+    scene: 'The Dream',
+    roles: [
+      { role: 'Griot', actor: 'Shakira DeAbreu' },
+      { role: 'Shakira', actor: 'Nicole Mercedes' },
+      { role: 'Mother', actor: 'Leah DeAbreu-Goodwill' },
+    ],
+  },
+  {
+    scene: 'Detention',
+    roles: [
+      { role: 'Griot', actor: 'Shakira DeAbreu' },
+      { role: 'Police Officer', actor: 'Renee Lemond' },
+      { role: 'Shakira', actor: 'Nicole Mercedes' },
+      { role: 'Crystal', actor: 'Nazani Martin' },
+      { role: 'Nicole', actor: 'Esther Marks' },
+      { role: 'Renee', actor: 'Kemar Matthews' },
+      { role: 'Theresa', actor: 'Saidy Ledesma / Faith Goodwill' },
+      { role: 'Garren', actor: 'Osiris Adjepong' },
+      { role: 'Veron', actor: 'Orlando Gordon' },
+      { role: 'Karloff', actor: 'Antonio Gordon' },
+    ],
+  },
+  {
+    scene: 'Pregnancy',
+    roles: [
+      { role: 'Shakira', actor: 'Tatyani Lawton' },
+      { role: 'Karloff', actor: 'Antonio Gordon' },
+    ],
+  },
+  {
+    scene: 'Drug Abuse',
+    roles: [
+      { role: 'Karloff', actor: 'Osiris Adjepong' },
+      { role: 'Shakira', actor: 'Nicole Mercedes' },
+      { role: 'Veron', actor: 'Orlando Gordon' },
+      { role: 'Aaron (Counselor)', actor: 'Aaron See Yuen' },
+    ],
+  },
+  {
+    scene: 'The Park',
+    roles: [
+      { role: 'Child 1', actor: 'Amir Garcia' },
+      { role: 'Sladie', actor: 'Esther Marks' },
+      { role: 'Garren', actor: 'Osiris Adjepong' },
+      { role: 'Ewu', actor: 'Nazani Martin' },
+      { role: 'Andrea', actor: 'Tatyani Lawton' },
+      { role: 'Ashley', actor: 'Saidy Ledesma' },
+      { role: 'Kofi', actor: 'Faith Goodwill' },
+      { role: 'Shakira', actor: 'Nicole Mercedes' },
+      { role: 'Veron', actor: 'Orlando Gordon' },
+      { role: 'Tania', actor: 'Grace Goodwill' },
+      { role: 'Aaron', actor: 'Luke Goodwill' },
+      { role: 'Alrick', actor: 'Kemar Matthews' },
+      { role: 'Crystal', actor: 'Nyaja Porter' },
+    ],
+  },
+  {
+    scene: 'The Visitation',
+    roles: [
+      { role: 'Prophet', actor: 'Aaron See Yuen' },
+      { role: 'N\u2019Zinga', actor: 'Nicole Mercedes' },
+      { role: 'Shaka Zulu', actor: 'AI' },
+      { role: 'Malcolm X', actor: 'Aaron See Yuen' },
+      { role: 'Martin Luther King Jr.', actor: 'Kyle Carter' },
+      { role: 'Marcus Garvey', actor: 'Warren Witter' },
+    ],
+  },
+  {
+    scene: 'The Demonstration',
+    roles: [
+      { role: 'Karloff', actor: 'Antonio Gordon' },
+      { role: 'Obi', actor: 'Osiris Adjepong' },
+      { role: 'Sladie', actor: 'Esther Marks' },
+      { role: 'Veron', actor: 'Orlando Gordon' },
+      { role: 'Nicole', actor: 'Tatyani Lawton' },
+      { role: 'Kebra', actor: 'Saidy Ledesma' },
+      { role: 'Kofi', actor: 'Faith Goodwill' },
+      { role: 'Laianna', actor: 'Shiann Melton' },
+      { role: 'Dana', actor: 'Nazani Martin' },
+      { role: 'Crystal', actor: 'Nyaja Porter' },
+    ],
+  },
+] as const
 
 export const REVIEWS = [
   {
