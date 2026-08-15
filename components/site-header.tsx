@@ -37,7 +37,7 @@ export function SiteHeader() {
           : 'border-b border-transparent',
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 sm:py-4">
         <Link href="/" className="flex items-center" aria-label={`${SITE.name} home`}>
           <Image
             src={onDarkHero ? '/images/capas-logo-ivory-gold.webp' : '/images/capas-logo-green-gold.webp'}
@@ -45,7 +45,7 @@ export function SiteHeader() {
             width={300}
             height={200}
             priority
-            className="h-11 w-auto sm:h-12"
+            className="h-16 w-auto sm:h-[4.25rem]"
           />
         </Link>
 
