@@ -1,14 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react'
+import {
+  FacebookIcon,
+  InstagramIcon,
+  YoutubeIcon,
+  LinkedinIcon,
+} from '@/components/social-icons'
 import { NewsletterForm } from '@/components/newsletter-form'
 import { FOOTER_COLUMNS, SITE, SOCIALS } from '@/lib/site'
 
 const SOCIAL_ICONS = {
-  facebook: Facebook,
-  instagram: Instagram,
-  youtube: Youtube,
-  linkedin: Linkedin,
+  facebook: FacebookIcon,
+  instagram: InstagramIcon,
+  youtube: YoutubeIcon,
+  linkedin: LinkedinIcon,
 } as const
 
 export function SiteFooter() {

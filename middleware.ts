@@ -1,24 +1,34 @@
 import { NextResponse, type NextRequest } from 'next/server'
 
 /**
- * Host-based routing.
+ * Host-based routing for The Children's Legacy microsite.
  *
- * - legacy.lolalouiscapas.org  -> serves The Children's Legacy production
- *   microsite, which physically lives under app/legacy/*. Requests are
- *   rewritten (URL stays clean on the subdomain).
- * - lolalouiscapas.org / www.* -> the normal site. The old /legacy URL is
- *   permanently redirected to /our-legacy, and the microsite paths are kept
- *   off the main domain.
+ * The microsite physically lives under app/legacy/*. It is served:
+ *   - In production on the legacy.lolalouiscapas.org subdomain (paths are
+ *     rewritten so the public URL stays clean, e.g. legacy.../cast).
+ *   - In preview/development at /legacy so the site can be viewed without
+ *     access to the real subdomain.
+ *
+ * On the production MAIN domain the retired /legacy URL is permanently
+ * redirected to its new home at /our-legacy.
  */
+function isPreviewHost(host: string) {
+  return (
+    host.startsWith('localhost') ||
+    host.startsWith('127.0.0.1') ||
+    host.endsWith('.vusercontent.net') ||
+    host.endsWith('.v0.dev') ||
+    host.endsWith('.vercel.app')
+  )
+}
+
 export function middleware(request: NextRequest) {
   const host = (request.headers.get('host') || '').toLowerCase()
   const url = request.nextUrl.clone()
   const { pathname } = url
 
-  const isLegacyHost = host.startsWith('legacy.')
-
-  if (isLegacyHost) {
-    // Rewrite the public path onto the internal /legacy segment.
+  // Production subdomain: rewrite clean paths onto the internal /legacy segment.
+  if (host.startsWith('legacy.')) {
     if (!pathname.startsWith('/legacy')) {
       url.pathname = pathname === '/' ? '/legacy' : `/legacy${pathname}`
       return NextResponse.rewrite(url)
@@ -26,7 +36,12 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Main host: send the retired /legacy URL to its new home.
+  // Preview / development: let /legacy through so the microsite is viewable.
+  if (isPreviewHost(host)) {
+    return NextResponse.next()
+  }
+
+  // Production main domain: send the retired /legacy URL to its new home.
   if (pathname === '/legacy' || pathname.startsWith('/legacy/')) {
     url.pathname = '/our-legacy'
     url.search = ''
