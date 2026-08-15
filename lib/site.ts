@@ -27,6 +27,11 @@ export const NAV = [
   { label: 'Partnerships', href: '/partnerships' },
   { label: 'Get Involved', href: '/board' },
   { label: 'Contact', href: '/contact' },
+  {
+    label: "The Children's Legacy",
+    href: 'https://legacy.lolalouiscapas.org',
+    external: true,
+  },
 ]
 
 export const SOCIALS = [

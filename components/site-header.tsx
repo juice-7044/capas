@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
+import { ArrowUpRight, Menu, X } from 'lucide-react'
 import { NAV, SITE } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
@@ -50,18 +50,32 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                'text-sm transition-colors hover:text-primary',
-                pathname === item.href ? 'text-primary' : 'text-muted-foreground',
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {NAV.map((item) =>
+            item.external ? (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                {item.label}
+                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  'text-sm transition-colors hover:text-primary',
+                  pathname === item.href ? 'text-primary' : 'text-muted-foreground',
+                )}
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -88,15 +102,28 @@ export function SiteHeader() {
           <ul className="flex flex-col gap-1">
             {NAV.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={cn(
-                    'block rounded-lg px-3 py-2.5 text-base transition-colors hover:bg-muted',
-                    pathname === item.href ? 'text-primary' : 'text-foreground',
-                  )}
-                >
-                  {item.label}
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 rounded-lg px-3 py-2.5 text-base text-foreground transition-colors hover:bg-muted"
+                  >
+                    {item.label}
+                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    <span className="sr-only">(opens in a new tab)</span>
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      'block rounded-lg px-3 py-2.5 text-base transition-colors hover:bg-muted',
+                      pathname === item.href ? 'text-primary' : 'text-foreground',
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
             <li className="mt-2">
