@@ -15,6 +15,7 @@ export function zeffyDonate(amount?: number) {
 export const NAV = [
   { label: 'About', href: '/about' },
   { label: 'Founder', href: '/founder' },
+  { label: 'Legacy', href: '/legacy' },
   { label: 'Programs', href: '/programs' },
   { label: 'Partnerships', href: '/partnerships' },
   { label: 'Get Involved', href: '/board' },
@@ -37,6 +38,7 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: 'About', href: '/about' },
       { label: 'Founder', href: '/founder' },
+      { label: 'Legacy', href: '/legacy' },
       { label: 'Programs', href: '/programs' },
       { label: 'Contact', href: '/contact' },
     ],
