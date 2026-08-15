@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { NewsletterForm } from '@/components/newsletter-form'
 import { FOOTER_COLUMNS, SITE, SOCIALS } from '@/lib/site'
@@ -8,10 +9,13 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1.3fr_1fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2.5">
-              <span className="inline-flex h-2.5 w-2.5 rounded-full bg-cream" />
-              <span className="font-display text-lg font-semibold text-cream">{SITE.short}</span>
-            </div>
+            <Image
+              src="/images/capas-logo-ivory-gold.webp"
+              alt={SITE.name}
+              width={300}
+              height={200}
+              className="h-16 w-auto"
+            />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/75">
               {SITE.name}. Three decades of affordable performing arts in the Bronx&mdash;raising the
               curtain again, this time free for all.

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
@@ -23,6 +24,10 @@ export function SiteHeader() {
     setOpen(false)
   }, [pathname])
 
+  // The home hero is dark; the header is transparent over it until scrolled.
+  // Use the ivory logo there, and the green logo on light backgrounds.
+  const onDarkHero = pathname === '/' && !scrolled && !open
+
   return (
     <header
       className={cn(
@@ -33,11 +38,15 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2.5" aria-label={`${SITE.short} home`}>
-          <span className="inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
-          <span className="font-display text-lg font-semibold tracking-tight text-foreground">
-            {SITE.short}
-          </span>
+        <Link href="/" className="flex items-center" aria-label={`${SITE.name} home`}>
+          <Image
+            src={onDarkHero ? '/images/capas-logo-ivory-gold.webp' : '/images/capas-logo-green-gold.webp'}
+            alt={SITE.name}
+            width={300}
+            height={200}
+            priority
+            className="h-11 w-auto sm:h-12"
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
