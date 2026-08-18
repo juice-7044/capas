@@ -2,15 +2,29 @@
 
 import { useState } from 'react'
 
+// Main-site webhook endpoint (Action URL).
+const WEBHOOK_URL = 'https://lolalouiscapas.org/api/webhook'
+
 export function NewsletterForm() {
   const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!firstName.trim() || !email.trim()) return
-    // Front-end scaffold: wire to Klaviyo/Salesforce later.
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          first_name: firstName.trim(),
+          email: email.trim(),
+        }),
+      })
+    } catch {
+      // Non-blocking: still confirm receipt in the UI.
+    }
     setSubmitted(true)
   }
 

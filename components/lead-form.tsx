@@ -3,6 +3,9 @@
 import { useState, type ReactNode } from 'react'
 import { CheckCircle2 } from 'lucide-react'
 
+// Main-site webhook endpoint (Action URL).
+const WEBHOOK_URL = 'https://lolalouiscapas.org/api/webhook'
+
 export type Field = {
   name: string
   label: string
@@ -30,9 +33,19 @@ export function LeadForm({
 }) {
   const [submitted, setSubmitted] = useState(false)
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    // Front-end scaffold: POST to /api/lead -> n8n -> Salesforce/Klaviyo later.
+    const data = new FormData(e.currentTarget)
+    const payload = Object.fromEntries(data.entries())
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+    } catch {
+      // Non-blocking: still confirm receipt in the UI.
+    }
     setSubmitted(true)
   }
 

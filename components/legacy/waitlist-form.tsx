@@ -2,6 +2,9 @@
 
 import { useState, type FormEvent } from 'react'
 
+// Legacy-site webhook endpoint (Action URL).
+const WEBHOOK_URL = 'https://legacy.lolalouiscapas.org/api/webhook'
+
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export function WaitlistForm() {
@@ -23,7 +26,7 @@ export function WaitlistForm() {
     setStatus('submitting')
     setMessage('')
     try {
-      const res = await fetch('/api/submit-form', {
+      const res = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
